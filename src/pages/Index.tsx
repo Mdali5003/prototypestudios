@@ -5,9 +5,11 @@ import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => (
   <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <CustomCursor />
     <Navbar />
     <HeroSection />
     <PortfolioSection />
