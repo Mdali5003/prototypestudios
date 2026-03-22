@@ -90,7 +90,7 @@ const HeroSection = () => {
         >
           <a
             href="#work"
-            className="group inline-flex items-center gap-2.5 bg-primary text-primary-foreground px-7 py-3.5 rounded-sm font-semibold text-sm tracking-wide uppercase hover:shadow-[0_0_30px_hsla(34,100%,50%,0.3)] active:scale-[0.97] transition-all duration-200"
+            className="group inline-flex items-center gap-2.5 bg-primary text-primary-foreground px-7 py-3.5 rounded-sm font-semibold text-sm tracking-wide uppercase hover:shadow-[0_0_30px_hsla(0,72%,51%,0.3)] active:scale-[0.97] transition-all duration-200"
           >
             <Play size={16} fill="currentColor" className="group-hover:scale-110 transition-transform duration-200" />
             View Showreel
