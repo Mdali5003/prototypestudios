@@ -39,7 +39,7 @@ const ContactSection = () => {
           </p>
 
           <div className="mt-10 space-y-5">
-            <a href="mailto:hello@youmahstudios.com" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group">
+            <a href="mailto:youmah7@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group">
               <div className="w-10 h-10 rounded-sm bg-card border border-border flex items-center justify-center group-hover:border-primary/30 transition-colors">
                 <Mail size={16} className="text-primary" />
               </div>
