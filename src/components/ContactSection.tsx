@@ -43,7 +43,7 @@ const ContactSection = () => {
               <div className="w-10 h-10 rounded-sm bg-card border border-border flex items-center justify-center group-hover:border-primary/30 transition-colors">
                 <Mail size={16} className="text-primary" />
               </div>
-              <span className="text-sm">hello@youmahstudios.com</span>
+              <span className="text-sm">youmah7@gmail.com</span>
             </a>
             <a href="tel:+1234567890" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group">
               <div className="w-10 h-10 rounded-sm bg-card border border-border flex items-center justify-center group-hover:border-primary/30 transition-colors">
