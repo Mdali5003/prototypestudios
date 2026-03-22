@@ -74,7 +74,7 @@ const CustomCursor = () => {
         style={{
           width: 400,
           height: 400,
-          background: "radial-gradient(circle, hsla(34, 100%, 50%, 0.06) 0%, transparent 70%)",
+          background: "radial-gradient(circle, hsla(0, 72%, 51%, 0.06) 0%, transparent 70%)",
           opacity: hidden ? 0 : 1,
           transition: "opacity 0.3s",
         }}
