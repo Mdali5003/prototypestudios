@@ -84,7 +84,7 @@ const ServicesSection = () => {
                 <div className="relative">
                   <div className="flex items-start justify-between mb-6">
                     <div className={`w-12 h-12 rounded-sm bg-primary/10 flex items-center justify-center transition-all duration-300 ${
-                      isHovered ? "bg-primary/20 shadow-[0_0_20px_hsla(34,100%,50%,0.1)]" : ""
+                      isHovered ? "bg-primary/20 shadow-[0_0_20px_hsla(0,72%,51%,0.1)]" : ""
                     }`}>
                       <Icon size={22} className="text-primary" />
                     </div>
