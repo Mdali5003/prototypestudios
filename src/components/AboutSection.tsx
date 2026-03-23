@@ -1,88 +1,83 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: "120+", label: "Events Covered" },
-  { value: "45+", label: "DJ Collaborations" },
-  { value: "3", label: "Countries" },
+  { value: "300+", label: "EVENTS" },
+  { value: "4", label: "CONTINENTS" },
+  { value: "1", label: "STANDARD" },
 ];
 
 const AboutSection = () => {
   const [revealed, setRevealed] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setRevealed(true); },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
-  // Parallax for photo
-  useEffect(() => {
-    const onScroll = () => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      const progress = 1 - rect.top / window.innerHeight;
-      const photo = sectionRef.current.querySelector("[data-parallax-photo]") as HTMLElement;
-      if (photo) {
-        photo.style.transform = `translate3d(0, ${progress * -30}px, 0)`;
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <section id="about" ref={sectionRef} className="py-24 md:py-32 px-6 md:px-12">
-      <div ref={ref} className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Photo placeholder with parallax */}
+    <section id="about" ref={ref} className="py-32 md:py-44 px-8 md:px-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        {/* Photo */}
         <div
-          data-parallax-photo
-          className={`aspect-[4/5] rounded-sm bg-gradient-to-br from-secondary to-card border border-border overflow-hidden flex items-end justify-center relative group transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            revealed ? "opacity-100 translate-x-0 blur-0" : "opacity-0 -translate-x-8 blur-[3px]"
+          className={`aspect-[3/4] bg-gradient-to-b from-[hsl(0,0%,8%)] to-[hsl(0,0%,5%)] overflow-hidden transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          {/* Ambient glow */}
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          <div className="p-8 text-center relative z-10">
-            <p className="text-muted-foreground text-sm">Your photo here</p>
+          <div className="w-full h-full flex items-end justify-center p-8">
+            <p className="font-body text-[11px] tracking-[0.3em] text-muted-foreground uppercase">
+              Photo placeholder
+            </p>
           </div>
         </div>
 
         {/* Text */}
         <div
-          className={`transition-all duration-700 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            revealed ? "opacity-100 translate-y-0 blur-0" : "opacity-0 translate-y-6 blur-[3px]"
+          className={`transition-all duration-1000 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-primary text-sm font-semibold tracking-[0.25em] uppercase mb-3">About</p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-balance">
-            The person behind the lens
+          <p className="font-body text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-8">
+            ABOUT
+          </p>
+
+          <h2 className="font-display text-3xl md:text-[2.8rem] leading-[1.15] text-foreground text-balance" style={{ fontWeight: 300 }}>
+            Built for the culture. Trusted by the industry.
           </h2>
-          <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed text-pretty">
+
+          <div className="mt-8 space-y-5 font-body text-[14px] md:text-[15px] text-muted-foreground leading-[1.8] font-light text-pretty">
             <p>
-              Youmah Studios is built on a passion for music and visual storytelling. I specialize in capturing the raw energy of live events — from intimate club nights to large-scale festivals.
+              Prototype Studios was founded on one belief — nightlife deserves world-class storytelling. We are a specialist production studio with a singular focus on the nightlife and events industry, producing multicam full-set recordings, short-form social content, editorial photography, and high-production aftermovies.
             </p>
             <p>
-              Every project gets the same treatment: cinematic color grading, tight editing, and a turnaround that respects your timeline. Whether it's a full DJ set edit, an aftermovie, or aerial coverage, the goal is always the same — make it look and feel as good as it sounded.
+              Across 300+ events and counting — spanning continents, cities, and the world's most respected venues — we've built a reputation for delivering content that captures more than just the moment. We capture the feeling.
             </p>
           </div>
 
-          {/* Stats with animated counters */}
-          <div className="mt-10 flex gap-8">
+          <p className="font-body text-[11px] tracking-[0.3em] text-muted-foreground mt-10 uppercase">
+            BASED IN DUBAI — OPERATING GLOBALLY
+          </p>
+
+          {/* Stats */}
+          <div className="mt-12 flex gap-12 md:gap-16">
             {stats.map((s, i) => (
               <div
                 key={s.label}
-                className={`transition-all duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
-                style={{ transitionDelay: revealed ? `${400 + i * 100}ms` : "0ms" }}
+                style={{ transitionDelay: `${600 + i * 120}ms` }}
               >
-                <p className="text-2xl md:text-3xl font-bold text-foreground tabular-nums">{s.value}</p>
-                <p className="text-xs text-muted-foreground tracking-wider uppercase mt-1">{s.label}</p>
+                <p className="font-display text-3xl md:text-4xl text-foreground tabular-nums" style={{ fontWeight: 300 }}>
+                  {s.value}
+                </p>
+                <p className="font-body text-[10px] tracking-[0.25em] text-muted-foreground mt-2 uppercase">
+                  {s.label}
+                </p>
               </div>
             ))}
           </div>
