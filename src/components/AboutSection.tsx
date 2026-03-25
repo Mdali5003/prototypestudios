@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import sohoImg from "@/assets/soho.jpg";
 
 const stats = [
   { value: "300+", label: "EVENTS" },
