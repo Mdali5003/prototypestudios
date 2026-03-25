@@ -112,7 +112,11 @@ const ProjectDetail = () => {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className={`grid gap-2 ${
+            project.media.some(m => m.vertical) 
+              ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3" 
+              : "grid-cols-1 md:grid-cols-2"
+          }`}>
             {project.media.map((item) =>
               item.type === "video" ? (
                 <VideoCard key={item.id} video={item} />
