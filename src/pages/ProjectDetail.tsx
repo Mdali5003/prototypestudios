@@ -140,7 +140,7 @@ const VideoCard = ({ video }: { video: MediaItem }) => {
       data-cursor="expand"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative aspect-video overflow-hidden"
+      className={`relative overflow-hidden ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
     >
       <video
         ref={videoRef}
