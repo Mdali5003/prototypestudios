@@ -67,7 +67,11 @@ const ProjectCard = ({
   index: number;
 }) => {
   const [hovered, setHovered] = useState(false);
+  const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate(`/work/${project.slug}`);
+  };
   return (
     <div
       data-cursor="expand"
