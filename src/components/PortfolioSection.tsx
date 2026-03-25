@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Project {
   id: number;
   title: string;
   subtitle: string;
+  slug: string;
   video?: string;
 }
 
