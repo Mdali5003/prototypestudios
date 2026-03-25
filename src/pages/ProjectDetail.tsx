@@ -8,9 +8,10 @@ interface MediaItem {
   src: string;
   title: string;
   type: "video" | "photo";
+  vertical?: boolean;
 }
 
-const projectData: Record<string, { title: string; subtitle: string; media: MediaItem[] }> = {
+const projectData: Record<string, { title: string; subtitle: string; media: MediaItem[]; vertical?: boolean }> = {
   "set-recording": {
     title: "SET RECORDING",
     subtitle: "FULL SET CAPTURE",
@@ -27,8 +28,9 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
     title: "SHORT FORM",
     subtitle: "SOCIAL CONTENT",
     media: [
-      { id: 1, src: "/portfolio/short-form.mp4", title: "SHORT FORM 01", type: "video" },
-      { id: 2, src: "/portfolio/short-form-2.mp4", title: "SHORT FORM 02", type: "video" },
+      { id: 1, src: "/portfolio/short-form.mp4", title: "SHORT FORM 01", type: "video", vertical: true },
+      { id: 2, src: "/portfolio/short-form-2.mp4", title: "SHORT FORM 02", type: "video", vertical: true },
+      { id: 3, src: "/portfolio/short-form-3.mp4", title: "SHORT FORM 03", type: "video", vertical: true },
     ],
   },
   photos: {
@@ -110,7 +112,11 @@ const ProjectDetail = () => {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className={`grid gap-2 ${
+            project.media.some(m => m.vertical) 
+              ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3" 
+              : "grid-cols-1 md:grid-cols-2"
+          }`}>
             {project.media.map((item) =>
               item.type === "video" ? (
                 <VideoCard key={item.id} video={item} />
@@ -134,7 +140,7 @@ const VideoCard = ({ video }: { video: MediaItem }) => {
       data-cursor="expand"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative aspect-video overflow-hidden"
+      className={`relative overflow-hidden ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
     >
       <video
         ref={videoRef}
