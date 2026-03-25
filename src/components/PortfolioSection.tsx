@@ -7,10 +7,10 @@ interface Project {
 }
 
 const projects: Project[] = [
-  { id: 1, title: "SET RECORDING", subtitle: "DUBAI" },
-  { id: 2, title: "AFTERMOVIE", subtitle: "EUROPE TOUR" },
-  { id: 3, title: "SHORT FORM", subtitle: "ASIA" },
-  { id: 4, title: "MULTICAM", subtitle: "FESTIVAL" },
+  { id: 1, title: "SET RECORDING", subtitle: "FULL SET CAPTURE" },
+  { id: 2, title: "AFTERMOVIE", subtitle: "EVENT RECAP" },
+  { id: 3, title: "SHORT FORM", subtitle: "SOCIAL CONTENT" },
+  { id: 4, title: "MULTICAM", subtitle: "MULTI-ANGLE PRODUCTION" },
 ];
 
 const PortfolioSection = () => {
