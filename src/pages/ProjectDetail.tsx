@@ -8,6 +8,7 @@ interface MediaItem {
   src: string;
   title: string;
   type: "video" | "photo";
+  vertical?: boolean;
 }
 
 const projectData: Record<string, { title: string; subtitle: string; media: MediaItem[] }> = {
