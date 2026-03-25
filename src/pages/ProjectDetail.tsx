@@ -38,6 +38,8 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
       { id: 2, src: "/portfolio/photos/amelie-1.png", title: "AMELIE LENS I", type: "photo" },
       { id: 3, src: "/portfolio/photos/amelie-3.png", title: "AMELIE LENS II", type: "photo" },
       { id: 4, src: "/portfolio/photos/amelie-2.png", title: "AMELIE LENS III", type: "photo" },
+      { id: 5, src: "/portfolio/photos/francis-11.jpg", title: "FRANCIS", type: "photo" },
+      { id: 6, src: "/portfolio/photos/liva-k.jpg", title: "LIVA K", type: "photo" },
     ],
   },
 };
