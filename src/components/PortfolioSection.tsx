@@ -4,13 +4,14 @@ interface Project {
   id: number;
   title: string;
   subtitle: string;
+  video?: string;
 }
 
 const projects: Project[] = [
-  { id: 1, title: "SET RECORDING", subtitle: "FULL SET CAPTURE" },
+  { id: 1, title: "SET RECORDING", subtitle: "FULL SET CAPTURE", video: "/portfolio/set-recording.mp4" },
   { id: 2, title: "AFTERMOVIE", subtitle: "EVENT RECAP" },
-  { id: 3, title: "SHORT FORM", subtitle: "SOCIAL CONTENT" },
-  { id: 4, title: "MULTICAM", subtitle: "MULTI-ANGLE PRODUCTION" },
+  { id: 3, title: "SHORT FORM", subtitle: "SOCIAL CONTENT", video: "/portfolio/short-form.mp4" },
+  { id: 4, title: "MULTICAM", subtitle: "MULTI-ANGLE PRODUCTION", video: "/portfolio/multicam.mp4" },
 ];
 
 const PortfolioSection = () => {
