@@ -11,7 +11,7 @@ interface MediaItem {
   vertical?: boolean;
 }
 
-const projectData: Record<string, { title: string; subtitle: string; media: MediaItem[] }> = {
+const projectData: Record<string, { title: string; subtitle: string; media: MediaItem[]; vertical?: boolean }> = {
   "set-recording": {
     title: "SET RECORDING",
     subtitle: "FULL SET CAPTURE",
