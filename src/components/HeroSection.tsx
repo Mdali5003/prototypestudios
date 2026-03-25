@@ -37,7 +37,7 @@ const HeroSection = () => {
           muted
           playsInline
         >
-          {/* <source src="/showreel.mp4" type="video/mp4" /> */}
+          <source src="/showreel.mp4" type="video/mp4" />
         </video>
       </div>
 
