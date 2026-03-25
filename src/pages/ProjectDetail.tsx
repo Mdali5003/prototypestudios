@@ -33,6 +33,7 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
       { id: 3, src: "/portfolio/short-form-3.mp4", title: "SHORT FORM 03", type: "video", vertical: true },
       { id: 4, src: "/portfolio/short-form-4.mp4", title: "SHORT FORM 04", type: "video", vertical: true },
       { id: 5, src: "/portfolio/short-form-5.mp4", title: "SHORT FORM 05", type: "video", vertical: true },
+      { id: 6, src: "/portfolio/short-form-6.mp4", title: "SHORT FORM 06", type: "video", vertical: true },
     ],
   },
   photos: {
