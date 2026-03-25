@@ -76,11 +76,23 @@ const ProjectCard = ({
       }`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      {/* Background placeholder */}
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-[hsl(0,0%,8%)] via-[hsl(0,0%,5%)] to-[hsl(0,0%,10%)] transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-        style={{ transform: hovered ? "scale(1.05)" : "scale(1)" }}
-      />
+      {/* Video or gradient background */}
+      {project.video ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+          style={{ transform: hovered ? "scale(1.05)" : "scale(1)" }}
+          src={project.video}
+        />
+      ) : (
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-[hsl(0,0%,8%)] via-[hsl(0,0%,5%)] to-[hsl(0,0%,10%)] transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+          style={{ transform: hovered ? "scale(1.05)" : "scale(1)" }}
+        />
+      )}
 
       {/* Hover overlay */}
       <div
