@@ -144,8 +144,8 @@ const VideoCard = ({ video }: { video: MediaItem }) => {
   return (
     <div
       data-cursor="expand"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => { setHovered(true); if (videoRef.current) videoRef.current.muted = false; }}
+      onMouseLeave={() => { setHovered(false); if (videoRef.current) videoRef.current.muted = true; }}
       className={`relative overflow-hidden ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
     >
       <video
