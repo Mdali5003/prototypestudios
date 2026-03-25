@@ -28,8 +28,9 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
     title: "SHORT FORM",
     subtitle: "SOCIAL CONTENT",
     media: [
-      { id: 1, src: "/portfolio/short-form.mp4", title: "SHORT FORM 01", type: "video" },
-      { id: 2, src: "/portfolio/short-form-2.mp4", title: "SHORT FORM 02", type: "video" },
+      { id: 1, src: "/portfolio/short-form.mp4", title: "SHORT FORM 01", type: "video", vertical: true },
+      { id: 2, src: "/portfolio/short-form-2.mp4", title: "SHORT FORM 02", type: "video", vertical: true },
+      { id: 3, src: "/portfolio/short-form-3.mp4", title: "SHORT FORM 03", type: "video", vertical: true },
     ],
   },
   photos: {
