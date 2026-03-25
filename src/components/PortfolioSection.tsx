@@ -1,17 +1,19 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Project {
   id: number;
   title: string;
   subtitle: string;
+  slug: string;
   video?: string;
 }
 
 const projects: Project[] = [
-  { id: 1, title: "SET RECORDING", subtitle: "FULL SET CAPTURE", video: "/portfolio/set-recording.mp4" },
-  { id: 2, title: "AFTERMOVIE", subtitle: "EVENT RECAP" },
-  { id: 3, title: "SHORT FORM", subtitle: "SOCIAL CONTENT", video: "/portfolio/short-form.mp4" },
-  { id: 4, title: "MULTICAM", subtitle: "MULTI-ANGLE PRODUCTION", video: "/portfolio/multicam.mp4" },
+  { id: 1, title: "SET RECORDING", subtitle: "FULL SET CAPTURE", slug: "set-recording", video: "/portfolio/set-recording.mp4" },
+  { id: 2, title: "AFTERMOVIE", subtitle: "EVENT RECAP", slug: "aftermovie" },
+  { id: 3, title: "SHORT FORM", subtitle: "SOCIAL CONTENT", slug: "short-form", video: "/portfolio/short-form.mp4" },
+  { id: 4, title: "MULTICAM", subtitle: "MULTI-ANGLE PRODUCTION", slug: "multicam", video: "/portfolio/multicam.mp4" },
 ];
 
 const PortfolioSection = () => {
@@ -65,13 +67,18 @@ const ProjectCard = ({
   index: number;
 }) => {
   const [hovered, setHovered] = useState(false);
+  const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate(`/work/${project.slug}`);
+  };
   return (
     <div
       data-cursor="expand"
+      onClick={handleClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative aspect-[4/3] md:aspect-[16/10] overflow-hidden group transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      className={`relative aspect-[4/3] md:aspect-[16/10] overflow-hidden group cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         revealed ? "opacity-100" : "opacity-0"
       }`}
       style={{ transitionDelay: `${index * 150}ms` }}
