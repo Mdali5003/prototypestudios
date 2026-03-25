@@ -75,9 +75,10 @@ const ProjectCard = ({
   return (
     <div
       data-cursor="expand"
+      onClick={handleClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative aspect-[4/3] md:aspect-[16/10] overflow-hidden group transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      className={`relative aspect-[4/3] md:aspect-[16/10] overflow-hidden group cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         revealed ? "opacity-100" : "opacity-0"
       }`}
       style={{ transitionDelay: `${index * 150}ms` }}
