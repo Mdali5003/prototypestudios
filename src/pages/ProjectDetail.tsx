@@ -41,6 +41,7 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
       { id: 5, src: "/portfolio/photos/francis-11.jpg", title: "FRANCIS", type: "photo" },
       { id: 6, src: "/portfolio/photos/liva-k.jpg", title: "LIVA K", type: "photo" },
       { id: 7, src: "/portfolio/photos/ona-22.jpg", title: "ONA", type: "photo" },
+      { id: 8, src: "/portfolio/photos/afrodise-53.jpg", title: "AFRODISE", type: "photo" },
     ],
   },
 };
