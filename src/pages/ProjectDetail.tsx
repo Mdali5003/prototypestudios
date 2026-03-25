@@ -3,36 +3,42 @@ import { ArrowLeft } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import CustomCursor from "@/components/CustomCursor";
 
-interface VideoItem {
+interface MediaItem {
   id: number;
   src: string;
   title: string;
+  type: "video" | "photo";
 }
 
-const projectData: Record<string, { title: string; subtitle: string; videos: VideoItem[] }> = {
+const projectData: Record<string, { title: string; subtitle: string; media: MediaItem[] }> = {
   "set-recording": {
     title: "SET RECORDING",
     subtitle: "FULL SET CAPTURE",
-    videos: [
-      { id: 1, src: "/portfolio/set-recording.mp4", title: "SET RECORDING 01" },
+    media: [
+      { id: 1, src: "/portfolio/set-recording.mp4", title: "SET RECORDING 01", type: "video" },
     ],
   },
   aftermovie: {
     title: "AFTERMOVIE",
     subtitle: "EVENT RECAP",
-    videos: [],
+    media: [],
   },
   "short-form": {
     title: "SHORT FORM",
     subtitle: "SOCIAL CONTENT",
-    videos: [
-      { id: 1, src: "/portfolio/short-form.mp4", title: "SHORT FORM 01" },
+    media: [
+      { id: 1, src: "/portfolio/short-form.mp4", title: "SHORT FORM 01", type: "video" },
     ],
   },
   photos: {
     title: "PHOTOS",
     subtitle: "EVENT PHOTOGRAPHY",
-    videos: [],
+    media: [
+      { id: 1, src: "/portfolio/photos/moblack-12.jpg", title: "MOBLACK", type: "photo" },
+      { id: 2, src: "/portfolio/photos/amelie-1.png", title: "AMELIE LENS I", type: "photo" },
+      { id: 3, src: "/portfolio/photos/amelie-3.png", title: "AMELIE LENS II", type: "photo" },
+      { id: 4, src: "/portfolio/photos/amelie-2.png", title: "AMELIE LENS III", type: "photo" },
+    ],
   },
 };
 
@@ -90,9 +96,9 @@ const ProjectDetail = () => {
         </h1>
       </header>
 
-      {/* Video gallery grid */}
+      {/* Media gallery grid */}
       <section className="px-4 md:px-8 pb-24">
-        {project.videos.length === 0 ? (
+        {project.media.length === 0 ? (
           <div className="flex items-center justify-center py-32">
             <p className="font-body text-[11px] tracking-[0.3em] text-muted-foreground">
               COMING SOON
@@ -100,9 +106,13 @@ const ProjectDetail = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-            {project.videos.map((video) => (
-              <VideoCard key={video.id} video={video} />
-            ))}
+            {project.media.map((item) =>
+              item.type === "video" ? (
+                <VideoCard key={item.id} video={item} />
+              ) : (
+                <PhotoCard key={item.id} photo={item} />
+              )
+            )}
           </div>
         )}
       </section>
@@ -110,7 +120,7 @@ const ProjectDetail = () => {
   );
 };
 
-const VideoCard = ({ video }: { video: VideoItem }) => {
+const VideoCard = ({ video }: { video: MediaItem }) => {
   const [hovered, setHovered] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -143,6 +153,41 @@ const VideoCard = ({ video }: { video: VideoItem }) => {
           }`}
         >
           {video.title}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const PhotoCard = ({ photo }: { photo: MediaItem }) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      data-cursor="expand"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="relative overflow-hidden"
+    >
+      <img
+        src={photo.src}
+        alt={photo.title}
+        loading="lazy"
+        className="w-full h-auto object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+        style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
+      />
+      <div
+        className={`absolute inset-0 bg-background/20 transition-opacity duration-500 ${
+          hovered ? "opacity-100" : "opacity-0"
+        }`}
+      />
+      <div className="absolute inset-0 flex items-end p-6 z-10">
+        <p
+          className={`font-body text-[11px] tracking-[0.3em] text-foreground transition-all duration-500 ${
+            hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+          }`}
+        >
+          {photo.title}
         </p>
       </div>
     </div>
