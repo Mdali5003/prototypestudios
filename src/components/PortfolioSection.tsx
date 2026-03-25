@@ -13,7 +13,7 @@ const projects: Project[] = [
   { id: 1, title: "SET RECORDING", subtitle: "FULL SET CAPTURE", slug: "set-recording", video: "/portfolio/set-recording.mp4" },
   { id: 2, title: "AFTERMOVIE", subtitle: "EVENT RECAP", slug: "aftermovie" },
   { id: 3, title: "SHORT FORM", subtitle: "SOCIAL CONTENT", slug: "short-form", video: "/portfolio/short-form.mp4" },
-  { id: 4, title: "MULTICAM", subtitle: "MULTI-ANGLE PRODUCTION", slug: "multicam", video: "/portfolio/multicam.mp4" },
+  { id: 4, title: "PHOTOS", subtitle: "EVENT PHOTOGRAPHY", slug: "photos" },
 ];
 
 const PortfolioSection = () => {

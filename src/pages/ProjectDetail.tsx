@@ -29,12 +29,10 @@ const projectData: Record<string, { title: string; subtitle: string; videos: Vid
       { id: 1, src: "/portfolio/short-form.mp4", title: "SHORT FORM 01" },
     ],
   },
-  multicam: {
-    title: "MULTICAM",
-    subtitle: "MULTI-ANGLE PRODUCTION",
-    videos: [
-      { id: 1, src: "/portfolio/multicam.mp4", title: "MULTICAM 01" },
-    ],
+  photos: {
+    title: "PHOTOS",
+    subtitle: "EVENT PHOTOGRAPHY",
+    videos: [],
   },
 };
 
