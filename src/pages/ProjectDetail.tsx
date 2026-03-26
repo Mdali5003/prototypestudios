@@ -128,7 +128,7 @@ const ProjectDetail = () => {
           }`}>
             {project.media.map((item) =>
               item.type === "video" ? (
-                <VideoCard key={item.id} video={item} />
+                <VideoCard key={item.id} video={item} activeVideoId={activeVideoId} setActiveVideoId={setActiveVideoId} />
               ) : (
                 <PhotoCard key={item.id} photo={item} />
               )
