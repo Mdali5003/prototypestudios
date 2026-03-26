@@ -151,62 +151,55 @@ const VideoCard = ({ video }: { video: MediaItem }) => {
   };
 
   return (
-    <>
-      <div
-        data-cursor="expand"
-        onClick={handleClick}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className={`relative overflow-hidden cursor-pointer ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
-      >
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          src={video.src}
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-          style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
-        />
-        <div
-          className={`absolute inset-0 bg-background/40 pointer-events-none transition-opacity duration-500 ${
-            hovered ? "opacity-100" : "opacity-0"
-          }`}
-        />
-        <div className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-500 ${
-          hovered ? "opacity-100" : "opacity-0"
-        }`}>
-          <Play size={40} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
-        </div>
-      </div>
-
-      {/* Embedded video modal */}
-      {showEmbed && video.link && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 backdrop-blur-sm"
-          onClick={() => setShowEmbed(false)}
-        >
+    <div
+      className={`relative overflow-hidden ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
+    >
+      {showEmbed && video.link ? (
+        <>
+          <iframe
+            src={video.link}
+            className="absolute inset-0 w-full h-full border-0 z-10"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
           <button
-            onClick={(e) => { e.stopPropagation(); setShowEmbed(false); }}
-            className="absolute top-6 right-6 text-muted-foreground hover:text-foreground transition-colors z-[110]"
+            onClick={() => setShowEmbed(false)}
+            className="absolute top-2 right-2 z-20 bg-background/70 rounded-full p-1 text-muted-foreground hover:text-foreground transition-colors"
           >
-            <X size={24} />
+            <X size={16} />
           </button>
+        </>
+      ) : (
+        <div
+          data-cursor="expand"
+          onClick={handleClick}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          className="absolute inset-0 cursor-pointer"
+        >
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            src={video.src}
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
+          />
           <div
-            onClick={(e) => e.stopPropagation()}
-            className={`${video.vertical ? "w-[min(360px,90vw)] aspect-[9/16]" : "w-[min(900px,90vw)] aspect-video"}`}
-          >
-            <iframe
-              src={video.link}
-              className="w-full h-full border-0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
+            className={`absolute inset-0 bg-background/40 pointer-events-none transition-opacity duration-500 ${
+              hovered ? "opacity-100" : "opacity-0"
+            }`}
+          />
+          <div className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-500 ${
+            hovered ? "opacity-100" : "opacity-0"
+          }`}>
+            <Play size={40} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
