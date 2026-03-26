@@ -102,7 +102,7 @@ const ProjectDetail = () => {
       </nav>
 
       {/* Hero */}
-      <header className="h-[60vh] flex flex-col items-center justify-center relative">
+      <header className="h-[35vh] md:h-[60vh] flex flex-col items-center justify-center relative">
         <p className="font-body text-[11px] tracking-[0.3em] text-muted-foreground mb-4">
           {project.subtitle}
         </p>
@@ -112,7 +112,7 @@ const ProjectDetail = () => {
       </header>
 
       {/* Media gallery grid */}
-      <section className="px-4 md:px-8 pb-24">
+      <section className="px-4 md:px-8 pb-12 md:pb-24">
         {project.media.length === 0 ? (
           <div className="flex items-center justify-center py-32">
             <p className="font-body text-[11px] tracking-[0.3em] text-muted-foreground">
