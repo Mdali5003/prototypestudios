@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Play } from "lucide-react";
+import { ArrowLeft, Play, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -141,43 +141,72 @@ const ProjectDetail = () => {
 
 const VideoCard = ({ video }: { video: MediaItem }) => {
   const [hovered, setHovered] = useState(false);
+  const [showEmbed, setShowEmbed] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleClick = () => {
     if (video.link) {
-      window.open(video.link, "_blank", "noopener,noreferrer");
+      setShowEmbed(true);
     }
   };
 
   return (
-    <div
-      data-cursor="expand"
-      onClick={handleClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className={`relative overflow-hidden cursor-pointer ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
-    >
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        src={video.src}
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-        style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
-      />
+    <>
       <div
-        className={`absolute inset-0 bg-background/40 pointer-events-none transition-opacity duration-500 ${
+        data-cursor="expand"
+        onClick={handleClick}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={`relative overflow-hidden cursor-pointer ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
+      >
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          src={video.src}
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+          style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
+        />
+        <div
+          className={`absolute inset-0 bg-background/40 pointer-events-none transition-opacity duration-500 ${
+            hovered ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        <div className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-500 ${
           hovered ? "opacity-100" : "opacity-0"
-        }`}
-      />
-      <div className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-500 ${
-        hovered ? "opacity-100" : "opacity-0"
-      }`}>
-        <Play size={40} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
+        }`}>
+          <Play size={40} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
+        </div>
       </div>
-    </div>
+
+      {/* Embedded video modal */}
+      {showEmbed && video.link && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 backdrop-blur-sm"
+          onClick={() => setShowEmbed(false)}
+        >
+          <button
+            onClick={(e) => { e.stopPropagation(); setShowEmbed(false); }}
+            className="absolute top-6 right-6 text-muted-foreground hover:text-foreground transition-colors z-[110]"
+          >
+            <X size={24} />
+          </button>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className={`${video.vertical ? "w-[min(360px,90vw)] aspect-[9/16]" : "w-[min(900px,90vw)] aspect-video"}`}
+          >
+            <iframe
+              src={video.link}
+              className="w-full h-full border-0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
