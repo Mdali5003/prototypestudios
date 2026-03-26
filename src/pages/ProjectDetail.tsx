@@ -140,14 +140,14 @@ const ProjectDetail = () => {
   );
 };
 
-const VideoCard = ({ video }: { video: MediaItem }) => {
+const VideoCard = ({ video, activeVideoId, setActiveVideoId }: { video: MediaItem; activeVideoId: number | null; setActiveVideoId: (id: number | null) => void }) => {
   const [hovered, setHovered] = useState(false);
-  const [showEmbed, setShowEmbed] = useState(false);
+  const showEmbed = activeVideoId === video.id;
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleClick = () => {
     if (video.link) {
-      setShowEmbed(true);
+      setActiveVideoId(video.id);
     }
   };
 
