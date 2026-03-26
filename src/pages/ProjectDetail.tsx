@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Play } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -9,6 +9,7 @@ interface MediaItem {
   title: string;
   type: "video" | "photo";
   vertical?: boolean;
+  link?: string;
 }
 
 const projectData: Record<string, { title: string; subtitle: string; media: MediaItem[]; vertical?: boolean }> = {
