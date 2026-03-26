@@ -102,11 +102,11 @@ const ProjectDetail = () => {
       </nav>
 
       {/* Hero */}
-      <header className="h-[35vh] md:h-[60vh] flex flex-col items-center justify-center relative">
-        <p className="font-body text-[11px] tracking-[0.3em] text-muted-foreground mb-4">
+      <header className="pt-24 md:h-[60vh] flex flex-col items-center justify-center relative pb-4 md:pb-0">
+        <p className="font-body text-[9px] md:text-[11px] tracking-[0.3em] text-muted-foreground mb-2 md:mb-4">
           {project.subtitle}
         </p>
-        <h1 className="font-display text-5xl md:text-7xl tracking-[0.04em] text-foreground" style={{ fontWeight: 300 }}>
+        <h1 className="font-display text-3xl md:text-7xl tracking-[0.04em] text-foreground" style={{ fontWeight: 300 }}>
           {project.title}
         </h1>
       </header>
