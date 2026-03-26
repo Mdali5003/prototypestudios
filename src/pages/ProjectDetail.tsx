@@ -60,6 +60,7 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const [loaded, setLoaded] = useState(false);
+  const [activeVideoId, setActiveVideoId] = useState<number | null>(null);
   const project = slug ? projectData[slug] : null;
 
   useEffect(() => {
@@ -127,7 +128,7 @@ const ProjectDetail = () => {
           }`}>
             {project.media.map((item) =>
               item.type === "video" ? (
-                <VideoCard key={item.id} video={item} />
+                <VideoCard key={item.id} video={item} activeVideoId={activeVideoId} setActiveVideoId={setActiveVideoId} />
               ) : (
                 <PhotoCard key={item.id} photo={item} />
               )
@@ -139,14 +140,14 @@ const ProjectDetail = () => {
   );
 };
 
-const VideoCard = ({ video }: { video: MediaItem }) => {
+const VideoCard = ({ video, activeVideoId, setActiveVideoId }: { video: MediaItem; activeVideoId: number | null; setActiveVideoId: (id: number | null) => void }) => {
   const [hovered, setHovered] = useState(false);
-  const [showEmbed, setShowEmbed] = useState(false);
+  const showEmbed = activeVideoId === video.id;
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleClick = () => {
     if (video.link) {
-      setShowEmbed(true);
+      setActiveVideoId(video.id);
     }
   };
 
@@ -163,7 +164,7 @@ const VideoCard = ({ video }: { video: MediaItem }) => {
             allowFullScreen
           />
           <button
-            onClick={() => setShowEmbed(false)}
+            onClick={() => setActiveVideoId(null)}
             className="absolute top-2 right-2 z-20 bg-background/70 rounded-full p-1 text-muted-foreground hover:text-foreground transition-colors"
           >
             <X size={16} />
