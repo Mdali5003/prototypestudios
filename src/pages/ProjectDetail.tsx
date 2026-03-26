@@ -164,7 +164,7 @@ const VideoCard = ({ video, activeVideoId, setActiveVideoId }: { video: MediaIte
             allowFullScreen
           />
           <button
-            onClick={() => setShowEmbed(false)}
+            onClick={() => setActiveVideoId(null)}
             className="absolute top-2 right-2 z-20 bg-background/70 rounded-full p-1 text-muted-foreground hover:text-foreground transition-colors"
           >
             <X size={16} />
