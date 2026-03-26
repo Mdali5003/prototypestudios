@@ -164,15 +164,15 @@ const VideoCard = ({ video }: { video: MediaItem }) => {
         loop
         playsInline
         src={video.src}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
         style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
       />
       <div
-        className={`absolute inset-0 bg-background/40 transition-opacity duration-500 ${
+        className={`absolute inset-0 bg-background/40 pointer-events-none transition-opacity duration-500 ${
           hovered ? "opacity-100" : "opacity-0"
         }`}
       />
-      <div className={`absolute inset-0 flex items-center justify-center z-10 transition-opacity duration-500 ${
+      <div className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-500 ${
         hovered ? "opacity-100" : "opacity-0"
       }`}>
         <Play size={40} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
