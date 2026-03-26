@@ -60,6 +60,7 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const [loaded, setLoaded] = useState(false);
+  const [activeVideoId, setActiveVideoId] = useState<number | null>(null);
   const project = slug ? projectData[slug] : null;
 
   useEffect(() => {
