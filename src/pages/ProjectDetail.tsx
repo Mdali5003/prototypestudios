@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Play } from "lucide-react";
+import { ArrowLeft, Play, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import CustomCursor from "@/components/CustomCursor";
 
