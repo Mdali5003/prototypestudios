@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Play } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -9,6 +9,7 @@ interface MediaItem {
   title: string;
   type: "video" | "photo";
   vertical?: boolean;
+  link?: string;
 }
 
 const projectData: Record<string, { title: string; subtitle: string; media: MediaItem[]; vertical?: boolean }> = {
@@ -28,15 +29,16 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
     title: "SHORT FORM",
     subtitle: "SOCIAL CONTENT",
     media: [
-      { id: 1, src: "/portfolio/short-form-6.mp4", title: "SHORT FORM 01", type: "video", vertical: true },
-      { id: 2, src: "/portfolio/short-form-4.mp4", title: "SHORT FORM 02", type: "video", vertical: true },
-      { id: 3, src: "/portfolio/short-form-9.mp4", title: "SHORT FORM 03", type: "video", vertical: true },
-      { id: 4, src: "/portfolio/short-form-5.mp4", title: "SHORT FORM 04", type: "video", vertical: true },
-      { id: 5, src: "/portfolio/short-form-3.mp4", title: "SHORT FORM 05", type: "video", vertical: true },
-      { id: 6, src: "/portfolio/short-form.mp4", title: "SHORT FORM 06", type: "video", vertical: true },
-      { id: 7, src: "/portfolio/short-form-8.mp4", title: "SHORT FORM 07", type: "video", vertical: true },
-      { id: 8, src: "/portfolio/short-form-7.mp4", title: "SHORT FORM 08", type: "video", vertical: true },
-      { id: 9, src: "/portfolio/short-form-2.mp4", title: "SHORT FORM 09", type: "video", vertical: true },
+      { id: 1, src: "/portfolio/short-form.mp4", title: "FRANCIS", type: "video", vertical: true, link: "https://youtube.com/shorts/F5yYFcMilps" },
+      { id: 2, src: "/portfolio/short-form-2.mp4", title: "HILDE", type: "video", vertical: true, link: "https://youtube.com/shorts/xp1y_0iUsEg" },
+      { id: 3, src: "/portfolio/short-form-3.mp4", title: "G&A", type: "video", vertical: true, link: "https://youtube.com/shorts/6cQZ8Kv37BA" },
+      { id: 4, src: "/portfolio/short-form-4.mp4", title: "ONA & MISS RICH", type: "video", vertical: true, link: "https://youtube.com/shorts/W3MvLgvVetk" },
+      { id: 5, src: "/portfolio/short-form-5.mp4", title: "LIVA K", type: "video", vertical: true, link: "https://youtube.com/shorts/5o9lzV8E0OM" },
+      { id: 6, src: "/portfolio/short-form-6.mp4", title: "ARCADIAN", type: "video", vertical: true, link: "https://youtube.com/shorts/s7mqKS1ESO8" },
+      { id: 7, src: "/portfolio/short-form-7.mp4", title: "HONEYLUV", type: "video", vertical: true, link: "https://youtube.com/shorts/tkuufatEbbs" },
+      { id: 8, src: "/portfolio/short-form-8.mp4", title: "AMELIE", type: "video", vertical: true, link: "https://youtube.com/shorts/aWvZgHhgVEk" },
+      { id: 9, src: "/portfolio/short-form-9.mp4", title: "REEL", type: "video", vertical: true, link: "https://youtube.com/shorts/bzS40TEeb0M" },
+      { id: 10, src: "/portfolio/multicam.mp4", title: "MOBLACK", type: "video", vertical: true, link: "https://youtube.com/shorts/dYY4xaksB0M" },
     ],
   },
   photos: {
@@ -120,7 +122,7 @@ const ProjectDetail = () => {
         ) : (
           <div className={`grid gap-2 ${
             project.media.some(m => m.vertical) 
-              ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3" 
+              ? "grid-cols-2 md:grid-cols-3" 
               : "grid-cols-1 md:grid-cols-2"
           }`}>
             {project.media.map((item) =>
@@ -141,12 +143,19 @@ const VideoCard = ({ video }: { video: MediaItem }) => {
   const [hovered, setHovered] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  const handleClick = () => {
+    if (video.link) {
+      window.open(video.link, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <div
       data-cursor="expand"
+      onClick={handleClick}
       onMouseEnter={() => { setHovered(true); if (videoRef.current) videoRef.current.muted = false; }}
       onMouseLeave={() => { setHovered(false); if (videoRef.current) videoRef.current.muted = true; }}
-      className={`relative overflow-hidden ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
+      className={`relative overflow-hidden cursor-pointer ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
     >
       <video
         ref={videoRef}
@@ -159,18 +168,14 @@ const VideoCard = ({ video }: { video: MediaItem }) => {
         style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
       />
       <div
-        className={`absolute inset-0 bg-background/30 transition-opacity duration-500 ${
+        className={`absolute inset-0 bg-background/40 transition-opacity duration-500 ${
           hovered ? "opacity-100" : "opacity-0"
         }`}
       />
-      <div className="absolute inset-0 flex items-end p-6 z-10">
-        <p
-          className={`font-body text-[11px] tracking-[0.3em] text-foreground transition-all duration-500 ${
-            hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-          }`}
-        >
-          {video.title}
-        </p>
+      <div className={`absolute inset-0 flex items-center justify-center z-10 transition-opacity duration-500 ${
+        hovered ? "opacity-100" : "opacity-0"
+      }`}>
+        <Play size={40} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
       </div>
     </div>
   );
