@@ -143,12 +143,19 @@ const VideoCard = ({ video }: { video: MediaItem }) => {
   const [hovered, setHovered] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  const handleClick = () => {
+    if (video.link) {
+      window.open(video.link, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <div
       data-cursor="expand"
+      onClick={handleClick}
       onMouseEnter={() => { setHovered(true); if (videoRef.current) videoRef.current.muted = false; }}
       onMouseLeave={() => { setHovered(false); if (videoRef.current) videoRef.current.muted = true; }}
-      className={`relative overflow-hidden ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
+      className={`relative overflow-hidden cursor-pointer ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
     >
       <video
         ref={videoRef}
@@ -161,18 +168,14 @@ const VideoCard = ({ video }: { video: MediaItem }) => {
         style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
       />
       <div
-        className={`absolute inset-0 bg-background/30 transition-opacity duration-500 ${
+        className={`absolute inset-0 bg-background/40 transition-opacity duration-500 ${
           hovered ? "opacity-100" : "opacity-0"
         }`}
       />
-      <div className="absolute inset-0 flex items-end p-6 z-10">
-        <p
-          className={`font-body text-[11px] tracking-[0.3em] text-foreground transition-all duration-500 ${
-            hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-          }`}
-        >
-          {video.title}
-        </p>
+      <div className={`absolute inset-0 flex items-center justify-center z-10 transition-opacity duration-500 ${
+        hovered ? "opacity-100" : "opacity-0"
+      }`}>
+        <Play size={40} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
       </div>
     </div>
   );
