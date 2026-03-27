@@ -59,6 +59,15 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
       { id: 7, src: "/portfolio/photos/ushuaia-7.jpg", title: "USHUAIA VII", type: "photo" },
       { id: 8, src: "/portfolio/photos/ushuaia-8.jpg", title: "USHUAIA VIII", type: "photo" },
       { id: 9, src: "/portfolio/photos/ushuaia-9.jpg", title: "USHUAIA IX", type: "photo" },
+      { id: 10, src: "/portfolio/photos/amelie-1.jpg", title: "AMELIE LENS I", type: "photo" },
+      { id: 11, src: "/portfolio/photos/amelie-2.jpg", title: "AMELIE LENS II", type: "photo" },
+      { id: 12, src: "/portfolio/photos/amelie-3.jpg", title: "AMELIE LENS III", type: "photo" },
+      { id: 13, src: "/portfolio/photos/liva-1.jpg", title: "LIVA K I", type: "photo" },
+      { id: 14, src: "/portfolio/photos/liva-2.jpg", title: "LIVA K II", type: "photo" },
+      { id: 15, src: "/portfolio/photos/liva-3.jpg", title: "LIVA K III", type: "photo" },
+      { id: 16, src: "/portfolio/photos/bw-1.jpg", title: "B&W I", type: "photo" },
+      { id: 17, src: "/portfolio/photos/bw-2.jpg", title: "B&W II", type: "photo" },
+      { id: 18, src: "/portfolio/photos/bw-3.jpg", title: "B&W III", type: "photo" },
     ],
   },
 };
@@ -128,9 +137,11 @@ const ProjectDetail = () => {
           </div>
         ) : (
           <div className={`grid gap-2 ${
-            project.media.some(m => m.vertical) 
-              ? "grid-cols-2 md:grid-cols-3" 
-              : "grid-cols-1 md:grid-cols-2"
+            slug === "photos"
+              ? "grid-cols-2 md:grid-cols-3"
+              : project.media.some(m => m.vertical) 
+                ? "grid-cols-2 md:grid-cols-3" 
+                : "grid-cols-1 md:grid-cols-2"
           }`}>
             {project.media.map((item) =>
               item.type === "video" ? (
