@@ -17,7 +17,12 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
     title: "SET RECORDING",
     subtitle: "FULL SET CAPTURE",
     media: [
-      { id: 1, src: "/portfolio/set-recording.mp4", title: "SET RECORDING 01", type: "video" },
+      { id: 1, src: "/portfolio/sr-b3b-moblack.mp4", title: "B3B MOBLACK", type: "video", link: "https://player.mediadelivery.net/play/626251/82a1e26f-b954-4d40-bf67-0bdcec7e0013" },
+      { id: 2, src: "/portfolio/sr-aaron.mp4", title: "AARON", type: "video", link: "https://player.mediadelivery.net/play/626251/e974526f-3cbe-4ae9-a24f-132b950321e2" },
+      { id: 3, src: "/portfolio/sr-amelie-2.mp4", title: "AMELIE 2", type: "video", link: "https://player.mediadelivery.net/play/626251/a188b935-55fc-4935-86b7-9900896d4d51" },
+      { id: 4, src: "/portfolio/sr-klang.mp4", title: "KLANG", type: "video", link: "https://player.mediadelivery.net/play/626251/009eb744-ab92-4878-b762-26df971ea8d2" },
+      { id: 5, src: "/portfolio/sr-jean-b.mp4", title: "JEAN B", type: "video", link: "https://player.mediadelivery.net/play/626251/64ee90c2-e304-4a77-b8cb-544956a9a8b2" },
+      { id: 6, src: "/portfolio/sr-hilde.mp4", title: "HILDE", type: "video", link: "https://www.youtube.com/embed/7BgfGX1m4cw?si=9nfS196G7CpceSlQ" },
     ],
   },
   aftermovie: {
