@@ -26,9 +26,19 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
     ],
   },
   aftermovie: {
-    title: "AFTERMOVIE",
+    title: "AFTERMOVIES & CONCEPTS",
     subtitle: "EVENT RECAP",
-    media: [],
+    media: [
+      { id: 1, src: "/portfolio/am-indeed-weekender.mp4", title: "INDEED WEEKENDER", type: "video", link: "https://player.mediadelivery.net/play/626251/2339673f-a91d-444a-9392-6c956a885823" },
+      { id: 2, src: "/portfolio/am-sexy-fish.mp4", title: "SEXY FISH", type: "video", link: "https://player.mediadelivery.net/play/626251/282d04ae-8d2c-4b16-91d5-7075b9da7348" },
+      { id: 3, src: "/portfolio/am-tabula-rasa.mp4", title: "TABULA RASA", type: "video", link: "https://player.mediadelivery.net/play/626251/fee3256c-615e-4941-be1c-f3cc10ee0f0b" },
+      { id: 4, src: "/portfolio/am-safyr.mp4", title: "SAFYR", type: "video", link: "https://player.mediadelivery.net/play/626251/f0403c37-738b-4930-9413-b687f51ea85d" },
+      { id: 5, src: "/portfolio/am-safari-surfers.mp4", title: "SAFARI SURFERS", type: "video", link: "https://player.mediadelivery.net/play/626251/bf5d1857-ad12-45fa-83a0-9c4b2e1900a7" },
+      { id: 6, src: "/portfolio/am-university-socials.mp4", title: "UNIVERSITY SOCIALS", type: "video", link: "https://player.mediadelivery.net/play/626251/728fe9b9-a8c9-4f2d-97a6-6b6f76eab738" },
+      { id: 7, src: "/portfolio/am-sexy-fish-2801.mp4", title: "SEXY FISH 2801", type: "video", link: "https://player.mediadelivery.net/play/626251/fffa8226-793c-41ca-92b1-74ed0817afc2" },
+      { id: 8, src: "/portfolio/am-enanda.mp4", title: "ENANDA", type: "video", link: "https://player.mediadelivery.net/play/626251/66beb3fd-7ddb-4b25-80bc-89c87e64846f" },
+      { id: 9, src: "/portfolio/am-art-senny.mp4", title: "ART SENNY LIVE", type: "video", link: "https://player.mediadelivery.net/play/626251/282c358c-c89e-4fee-87be-75e82c704118" },
+    ],
   },
   "short-form": {
     title: "SHORT FORM",
