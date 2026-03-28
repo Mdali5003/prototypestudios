@@ -84,7 +84,7 @@ const ProjectCard = ({
       }`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      {/* Video or gradient background */}
+      {/* Video, image, or gradient background */}
       {project.video ? (
         <video
           autoPlay
@@ -94,6 +94,13 @@ const ProjectCard = ({
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
           style={{ transform: hovered ? "scale(1.05)" : "scale(1)" }}
           src={project.video}
+        />
+      ) : project.image ? (
+        <img
+          src={project.image}
+          alt={project.title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+          style={{ transform: hovered ? "scale(1.05)" : "scale(1)" }}
         />
       ) : (
         <div
