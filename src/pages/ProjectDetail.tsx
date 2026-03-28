@@ -132,8 +132,16 @@ const ProjectDetail = () => {
         <p className="font-body text-[8px] md:text-[10px] tracking-[0.3em] text-muted-foreground mb-1 md:mb-2">
           {project.subtitle}
         </p>
-        <h1 className="font-display text-2xl md:text-5xl tracking-[0.04em] text-foreground" style={{ fontWeight: 300 }}>
-          {project.title}
+        <h1 className="font-display text-2xl md:text-5xl tracking-[0.04em] text-foreground text-center" style={{ fontWeight: 300 }}>
+          {project.title.includes("&") ? (
+            <>
+              {project.title.split("&")[0].trim()}
+              <br />
+              <span className="text-lg md:text-3xl tracking-[0.08em]">& {project.title.split("&")[1].trim()}</span>
+            </>
+          ) : (
+            project.title
+          )}
         </h1>
       </header>
 
