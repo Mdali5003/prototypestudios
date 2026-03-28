@@ -7,6 +7,7 @@ interface Project {
   subtitle: string;
   slug: string;
   video?: string;
+  image?: string;
 }
 
 const projects: Project[] = [
