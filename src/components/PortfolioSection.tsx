@@ -111,12 +111,22 @@ const ProjectCard = ({
       {/* Title — appears on hover */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
         <h3
-          className={`font-display text-3xl md:text-5xl tracking-[0.05em] text-foreground transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          className={`font-display tracking-[0.05em] text-foreground transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] text-center ${
             hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          } ${project.title.includes("&") ? "text-2xl md:text-4xl" : "text-3xl md:text-5xl"}`}
           style={{ fontWeight: 300 }}
         >
-          {project.title}
+          {project.title.includes("&") ? (
+            <>
+              {project.title.split("&")[0].trim()}
+              <br />
+              <span className="text-xl md:text-3xl tracking-[0.08em]">&</span>
+              <br />
+              <span className="text-xl md:text-3xl tracking-[0.08em]">{project.title.split("&")[1].trim()}</span>
+            </>
+          ) : (
+            project.title
+          )}
         </h3>
         <p
           className={`font-body text-[11px] tracking-[0.3em] text-muted-foreground mt-3 transition-all duration-700 delay-75 ease-[cubic-bezier(0.16,1,0.3,1)] ${
