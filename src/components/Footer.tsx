@@ -1,10 +1,12 @@
+import sohoImg from "@/assets/soho.jpg";
+
 const Footer = () => (
   <footer className="relative border-t border-[hsl(0,0%,12%)]">
-    {/* Francis photo banner */}
+    {/* Banner photo */}
     <div className="relative w-full h-64 md:h-96 overflow-hidden">
       <img
-        src="/portfolio/photos/francis-10.jpg"
-        alt="Francis live performance"
+        src={sohoImg}
+        alt="DJ performing at event"
         className="w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-background/50" />
