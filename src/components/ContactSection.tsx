@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { addSubmission } from "@/lib/formStore";
 
 const ContactSection = () => {
   const [revealed, setRevealed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,7 +18,9 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    addSubmission(formData);
     setSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
     setTimeout(() => setSubmitted(false), 3000);
   };
 
