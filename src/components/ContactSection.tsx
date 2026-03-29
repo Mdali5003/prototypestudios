@@ -55,6 +55,8 @@ const ContactSection = () => {
               required
               type="text"
               placeholder="NAME"
+              value={formData.name}
+              onChange={(e) => setFormData(d => ({ ...d, name: e.target.value }))}
               className="w-full bg-transparent border-b border-[hsl(0,0%,20%)] py-4 font-body text-[13px] tracking-[0.15em] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
             />
           </div>
@@ -63,6 +65,8 @@ const ContactSection = () => {
               required
               type="email"
               placeholder="EMAIL"
+              value={formData.email}
+              onChange={(e) => setFormData(d => ({ ...d, email: e.target.value }))}
               className="w-full bg-transparent border-b border-[hsl(0,0%,20%)] py-4 font-body text-[13px] tracking-[0.15em] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
             />
           </div>
@@ -71,6 +75,8 @@ const ContactSection = () => {
               required
               rows={3}
               placeholder="TELL US ABOUT YOUR PROJECT"
+              value={formData.message}
+              onChange={(e) => setFormData(d => ({ ...d, message: e.target.value }))}
               className="w-full bg-transparent border-b border-[hsl(0,0%,20%)] py-4 font-body text-[13px] tracking-[0.15em] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300 resize-none"
             />
           </div>
