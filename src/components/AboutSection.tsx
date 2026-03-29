@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import sohoImg from "@/assets/soho.jpg";
+import francisImg from "/portfolio/photos/francis-10.jpg";
 
 const stats = [
   { value: "300+", label: "EVENTS" },
