@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { addSubmission } from "@/lib/formStore";
 
 const ContactSection = () => {
   const [revealed, setRevealed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,7 +18,9 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    addSubmission(formData);
     setSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
     setTimeout(() => setSubmitted(false), 3000);
   };
 
@@ -51,6 +55,8 @@ const ContactSection = () => {
               required
               type="text"
               placeholder="NAME"
+              value={formData.name}
+              onChange={(e) => setFormData(d => ({ ...d, name: e.target.value }))}
               className="w-full bg-transparent border-b border-[hsl(0,0%,20%)] py-4 font-body text-[13px] tracking-[0.15em] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
             />
           </div>
@@ -59,6 +65,8 @@ const ContactSection = () => {
               required
               type="email"
               placeholder="EMAIL"
+              value={formData.email}
+              onChange={(e) => setFormData(d => ({ ...d, email: e.target.value }))}
               className="w-full bg-transparent border-b border-[hsl(0,0%,20%)] py-4 font-body text-[13px] tracking-[0.15em] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
             />
           </div>
@@ -67,6 +75,8 @@ const ContactSection = () => {
               required
               rows={3}
               placeholder="TELL US ABOUT YOUR PROJECT"
+              value={formData.message}
+              onChange={(e) => setFormData(d => ({ ...d, message: e.target.value }))}
               className="w-full bg-transparent border-b border-[hsl(0,0%,20%)] py-4 font-body text-[13px] tracking-[0.15em] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300 resize-none"
             />
           </div>
@@ -86,13 +96,18 @@ const ContactSection = () => {
           </div>
         </form>
 
-        <p
-          className={`font-body text-[11px] tracking-[0.2em] text-muted-foreground mt-12 transition-all duration-1000 delay-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        <div
+          className={`mt-12 space-y-2 transition-all duration-1000 delay-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             revealed ? "opacity-100" : "opacity-0"
           }`}
         >
-          hello@prototypestudios.com
-        </p>
+          <p className="font-body text-[11px] tracking-[0.2em] text-muted-foreground">
+            youmah.7@gmail.com
+          </p>
+          <p className="font-body text-[11px] tracking-[0.2em] text-muted-foreground">
+            +971 509 325 501
+          </p>
+        </div>
       </div>
     </section>
   );
