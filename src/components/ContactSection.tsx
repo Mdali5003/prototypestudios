@@ -86,13 +86,18 @@ const ContactSection = () => {
           </div>
         </form>
 
-        <p
-          className={`font-body text-[11px] tracking-[0.2em] text-muted-foreground mt-12 transition-all duration-1000 delay-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        <div
+          className={`mt-12 space-y-2 transition-all duration-1000 delay-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             revealed ? "opacity-100" : "opacity-0"
           }`}
         >
-          hello@prototypestudios.com
-        </p>
+          <p className="font-body text-[11px] tracking-[0.2em] text-muted-foreground">
+            youmah.7@gmail.com
+          </p>
+          <p className="font-body text-[11px] tracking-[0.2em] text-muted-foreground">
+            +971 509 325 501
+          </p>
+        </div>
       </div>
     </section>
   );
