@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className="w-full px-8 md:px-12 flex items-center justify-between h-20">
           <a
             href="#"
-            className="font-body text-[11px] font-medium tracking-[0.3em] uppercase text-foreground"
+            className="font-display text-[15px] tracking-[0.2em] uppercase text-foreground" style={{ fontWeight: 300 }}
           >
             PROTOTYPE MEDIA
           </a>
