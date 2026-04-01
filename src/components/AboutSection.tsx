@@ -48,7 +48,7 @@ const AboutSection = () => {
 
           <div className="mt-8 space-y-5 font-body text-[14px] md:text-[15px] text-muted-foreground leading-[1.8] font-light text-pretty">
             <p>
-              Prototype Studios was founded on one belief — nightlife deserves world-class storytelling. We are a specialist production studio with a singular focus on the nightlife and events industry, producing multicam full-set recordings, short-form social content, editorial photography, and high-production aftermovies.
+              Prototype Media was founded on one belief — nightlife deserves world-class storytelling. We are a specialist production studio with a singular focus on the nightlife and events industry, producing multicam full-set recordings, short-form social content, editorial photography, and high-production aftermovies.
             </p>
             <p>
               Across 300+ events and counting — spanning continents, cities, and the world's most respected venues — we've built a reputation for delivering content that captures more than just the moment. We capture the feeling.

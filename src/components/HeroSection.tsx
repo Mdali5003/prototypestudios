@@ -23,7 +23,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section ref={sectionRef} className="relative h-[85vh] flex items-center justify-center overflow-hidden">
       {/* Video background */}
       <div data-parallax-bg className="absolute inset-0 scale-[1.15] origin-center">
         <div className="absolute inset-0 bg-background/60 z-10" />
@@ -59,7 +59,7 @@ const HeroSection = () => {
         >
           PROTOTYPE
           <br />
-          STUDIOS
+          MEDIA
         </h1>
 
         <p
@@ -72,13 +72,14 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div
+      <button
+        onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
         className={`absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center transition-all duration-[1000ms] delay-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
         <ChevronDown size={18} className="text-muted-foreground animate-bounce" />
-      </div>
+      </button>
     </section>
   );
 };

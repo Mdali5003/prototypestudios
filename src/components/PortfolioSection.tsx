@@ -32,16 +32,6 @@ const PortfolioSection = () => {
 
   return (
     <section id="work" ref={ref} className="relative">
-      {/* Section label */}
-      <div className="px-8 md:px-12 pt-24 pb-8">
-        <p
-          className={`font-body text-[11px] tracking-[0.3em] uppercase text-muted-foreground transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-          }`}
-        >
-          SELECTED WORK
-        </p>
-      </div>
 
       {/* Full-bleed grid */}
       <div className="grid grid-cols-1 md:grid-cols-2">
@@ -109,19 +99,13 @@ const ProjectCard = ({
         />
       )}
 
-      {/* Hover overlay */}
-      <div
-        className={`absolute inset-0 bg-background/40 transition-opacity duration-500 ${
-          hovered ? "opacity-100" : "opacity-0"
-        }`}
-      />
+      {/* Permanent overlay for text readability */}
+      <div className="absolute inset-0 bg-background/50" />
 
-      {/* Title — appears on hover */}
+      {/* Title — always visible */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
         <h3
-          className={`font-display tracking-[0.05em] text-foreground transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] text-center ${
-            hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          } ${project.title.includes("&") ? "text-2xl md:text-4xl" : "text-3xl md:text-5xl"}`}
+          className={`font-display tracking-[0.05em] text-foreground transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] text-center ${project.title.includes("&") ? "text-2xl md:text-4xl" : "text-3xl md:text-5xl"}`}
           style={{ fontWeight: 300 }}
         >
           {project.title.includes("&") ? (
@@ -137,9 +121,7 @@ const ProjectCard = ({
           )}
         </h3>
         <p
-          className={`font-body text-[11px] tracking-[0.3em] text-muted-foreground mt-3 transition-all duration-700 delay-75 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-          }`}
+          className="font-body text-[11px] tracking-[0.3em] text-muted-foreground mt-3"
         >
           {project.subtitle}
         </p>
