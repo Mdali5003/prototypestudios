@@ -99,12 +99,8 @@ const ProjectCard = ({
         />
       )}
 
-      {/* Hover overlay */}
-      <div
-        className={`absolute inset-0 bg-background/40 transition-opacity duration-500 ${
-          hovered ? "opacity-100" : "opacity-0"
-        }`}
-      />
+      {/* Permanent overlay for text readability */}
+      <div className="absolute inset-0 bg-background/50" />
 
       {/* Title — always visible */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10">

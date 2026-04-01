@@ -28,7 +28,7 @@ const Navbar = () => {
             href="#"
             className="font-body text-[11px] font-medium tracking-[0.3em] uppercase text-foreground"
           >
-            PROTOTYPE STUDIOS
+            PROTOTYPE MEDIA
           </a>
 
           {/* Desktop */}

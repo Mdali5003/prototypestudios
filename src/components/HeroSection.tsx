@@ -72,13 +72,14 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div
+      <button
+        onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
         className={`absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center transition-all duration-[1000ms] delay-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
         <ChevronDown size={18} className="text-muted-foreground animate-bounce" />
-      </div>
+      </button>
     </section>
   );
 };
