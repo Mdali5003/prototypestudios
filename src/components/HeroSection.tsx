@@ -23,7 +23,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-[60vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
+    <section ref={sectionRef} className="relative h-[70vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
       {/* Video background */}
       <div data-parallax-bg className="absolute inset-0 scale-[1.15] origin-center">
         <div className="absolute inset-0 bg-background/60 z-10" />
