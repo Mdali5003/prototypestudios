@@ -59,7 +59,7 @@ const HeroSection = () => {
         >
           PROTOTYPE
           <br />
-          STUDIOS
+          MEDIA
         </h1>
 
         <p
