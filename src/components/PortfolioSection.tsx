@@ -106,12 +106,10 @@ const ProjectCard = ({
         }`}
       />
 
-      {/* Title — appears on hover */}
+      {/* Title — always visible */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
         <h3
-          className={`font-display tracking-[0.05em] text-foreground transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] text-center ${
-            hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          } ${project.title.includes("&") ? "text-2xl md:text-4xl" : "text-3xl md:text-5xl"}`}
+          className={`font-display tracking-[0.05em] text-foreground transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] text-center ${project.title.includes("&") ? "text-2xl md:text-4xl" : "text-3xl md:text-5xl"}`}
           style={{ fontWeight: 300 }}
         >
           {project.title.includes("&") ? (
