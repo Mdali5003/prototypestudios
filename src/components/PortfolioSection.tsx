@@ -32,16 +32,6 @@ const PortfolioSection = () => {
 
   return (
     <section id="work" ref={ref} className="relative">
-      {/* Section label */}
-      <div className="px-8 md:px-12 pt-24 pb-8">
-        <p
-          className={`font-body text-[11px] tracking-[0.3em] uppercase text-muted-foreground transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-          }`}
-        >
-          SELECTED WORK
-        </p>
-      </div>
 
       {/* Full-bleed grid */}
       <div className="grid grid-cols-1 md:grid-cols-2">
