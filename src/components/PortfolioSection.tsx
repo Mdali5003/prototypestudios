@@ -125,9 +125,7 @@ const ProjectCard = ({
           )}
         </h3>
         <p
-          className={`font-body text-[11px] tracking-[0.3em] text-muted-foreground mt-3 transition-all duration-700 delay-75 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-          }`}
+          className="font-body text-[11px] tracking-[0.3em] text-muted-foreground mt-3"
         >
           {project.subtitle}
         </p>
