@@ -10,17 +10,24 @@ const navLinks = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 800);
     return () => clearTimeout(t);
   }, []);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-opacity duration-1000 ${
-          visible ? "opacity-100" : "opacity-0"
+        className={`fixed top-0 left-0 right-0 z-50 transition-opacity duration-700 ${
+          visible && !scrolled ? "opacity-100" : !visible ? "opacity-0" : "opacity-0 pointer-events-none"
         }`}
       >
         <div className="w-full px-8 md:px-12 flex items-center justify-between h-20">
