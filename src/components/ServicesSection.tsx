@@ -34,7 +34,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section id="services" ref={ref} className="py-32 md:py-44 px-8 md:px-12">
+    <section id="services" ref={ref} className="pt-32 md:pt-44 pb-16 md:pb-20 px-8 md:px-12">
       <div className="max-w-7xl mx-auto">
         <p
           className={`font-body text-[11px] tracking-[0.3em] uppercase text-muted-foreground mb-16 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
