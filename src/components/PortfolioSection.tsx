@@ -34,7 +34,7 @@ const PortfolioSection = () => {
     <section id="work" ref={ref} className="relative">
 
       {/* Full-bleed grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
         {projects.map((project, i) => (
           <ProjectCard
             key={project.id}
