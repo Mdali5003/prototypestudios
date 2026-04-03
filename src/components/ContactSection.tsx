@@ -102,7 +102,7 @@ const ContactSection = () => {
           }`}
         >
           <p className="font-body text-[11px] tracking-[0.2em] text-muted-foreground">
-            youmah.7@gmail.com
+            theprototypemedia@gmail.com
           </p>
           <p className="font-body text-[11px] tracking-[0.2em] text-muted-foreground">
             +971 509 325 501
