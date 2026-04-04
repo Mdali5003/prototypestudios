@@ -25,7 +25,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-32 md:py-44 px-8 md:px-12">
+    <section id="contact" ref={ref} className="pt-4 md:pt-6 pb-12 md:pb-16 px-8 md:px-12">
       <div className="max-w-2xl mx-auto text-center">
         <h2
           className={`font-display text-3xl md:text-[3.2rem] leading-[1.1] text-foreground text-balance transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
