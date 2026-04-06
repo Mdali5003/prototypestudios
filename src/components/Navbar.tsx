@@ -33,8 +33,9 @@ const Navbar = () => {
         <div className="w-full px-8 md:px-12 flex items-center justify-between h-20">
           <a
             href="#"
-            className="font-display text-[15px] tracking-[0.2em] uppercase text-foreground" style={{ fontWeight: 300 }}
+            className="flex items-center gap-2 font-display text-[15px] tracking-[0.2em] uppercase text-foreground" style={{ fontWeight: 300 }}
           >
+            <img src="/logo.png" alt="Prototype Media logo" className="h-8 w-auto" />
             PROTOTYPE MEDIA
           </a>
 
