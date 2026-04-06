@@ -30,7 +30,7 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
     subtitle: "EVENT RECAP",
     media: [
       { id: 1, src: "/portfolio/am-indeed-weekender.mp4", title: "INDEED WEEKENDER", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/2339673f-a91d-444a-9392-6c956a885823" },
-      { id: 2, src: "/portfolio/am-sexy-fish.mp4", title: "SEXY FISH", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/282d04ae-8d2c-4b16-91d5-7075b9da7348" },
+      { id: 2, src: "/portfolio/am-monta.mp4", title: "MONTA", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/238e63de-a88a-4d2c-8cad-4dab91e7e59a" },
       { id: 3, src: "/portfolio/am-tabula-rasa.mp4", title: "TABULA RASA", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/fee3256c-615e-4941-be1c-f3cc10ee0f0b" },
       { id: 4, src: "/portfolio/am-safyr.mp4", title: "SAFYR", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/f0403c37-738b-4930-9413-b687f51ea85d" },
       { id: 5, src: "/portfolio/am-safari-surfers.mp4", title: "SAFARI SURFERS", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/bf5d1857-ad12-45fa-83a0-9c4b2e1900a7" },
