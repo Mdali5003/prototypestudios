@@ -182,6 +182,7 @@ const VideoCard = ({ video, activeVideoId, setActiveVideoId }: { video: MediaIte
 
   const handleClick = () => {
     if (video.link) {
+      setHovered(false);
       setActiveVideoId(video.id);
     }
   };
@@ -191,20 +192,22 @@ const VideoCard = ({ video, activeVideoId, setActiveVideoId }: { video: MediaIte
       className={`relative overflow-hidden ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
     >
       {showEmbed && video.link ? (
-        <>
+        <div className="absolute inset-0">
           <iframe
             src={video.link}
             className="absolute inset-0 w-full h-full border-0 z-10"
             allow="autoplay; encrypted-media"
             allowFullScreen
+            style={{ cursor: "default" }}
           />
           <button
             onClick={() => setActiveVideoId(null)}
             className="absolute top-2 right-2 z-20 bg-background/70 rounded-full p-1 text-muted-foreground hover:text-foreground transition-colors"
+            style={{ cursor: "pointer" }}
           >
             <X size={16} />
           </button>
-        </>
+        </div>
       ) : (
         <div
           data-cursor="expand"
