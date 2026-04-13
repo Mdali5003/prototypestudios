@@ -182,6 +182,7 @@ const VideoCard = ({ video, activeVideoId, setActiveVideoId }: { video: MediaIte
 
   const handleClick = () => {
     if (video.link) {
+      setHovered(false);
       setActiveVideoId(video.id);
     }
   };
