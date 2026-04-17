@@ -10,6 +10,8 @@ const logos: Logo[] = [
   { src: "/logos/soho-garden.png", alt: "Soho Garden" },
   { src: "/logos/surf-club-dubai.png", alt: "Surf Club Dubai" },
   { src: "/logos/klangunstler.jpg", alt: "Klangkuenstler" },
+  { src: "/logos/amelie-lens.png", alt: "Amelie Lens" },
+  { src: "/logos/francis-mercier.png", alt: "Francis Mercier" },
   { src: "/logos/mo-black.png", alt: "MoBlack" },
   { src: "/logos/gioli-assia.png", alt: "Gioli & Assia" },
   { src: "/logos/aaron-sevilla.png", alt: "Aaron Sevilla" },
