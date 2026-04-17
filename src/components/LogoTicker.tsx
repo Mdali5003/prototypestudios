@@ -6,7 +6,8 @@ interface Logo {
 }
 
 const logos: Logo[] = [
-  { src: "/logos/ushuaia.jpg", alt: "Ushuaia Dubai" },
+  { src: "/logos/savaya.png", alt: "Savaya" },
+  { src: "/logos/ushuaia.png", alt: "Ushuaia Dubai" },
   { src: "/logos/soho-garden.png", alt: "Soho Garden" },
   { src: "/logos/surf-club-dubai.png", alt: "Surf Club Dubai" },
   { src: "/logos/klangunstler.jpg", alt: "Klangkuenstler" },
@@ -45,13 +46,13 @@ const LogoTicker = () => {
         {items.map((logo, i) => (
           <div
             key={`${logo.src}-${i}`}
-            className="flex items-center justify-center px-10 md:px-14 py-4 border-r border-[hsl(0,0%,12%)] shrink-0"
+            className="flex items-center justify-center w-[180px] md:w-[220px] h-20 md:h-24 px-6 md:px-8 border-r border-[hsl(0,0%,12%)] shrink-0"
           >
             <img
               src={logo.src}
               alt={logo.alt}
               loading="lazy"
-              className="h-10 md:h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+              className="max-h-8 md:max-h-10 max-w-full w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
               style={{ filter: "brightness(0) invert(1)" }}
             />
           </div>
