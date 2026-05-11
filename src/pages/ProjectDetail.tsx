@@ -121,7 +121,7 @@ const ProjectDetail = () => {
         </Link>
         <Link
           to="/"
-          className="font-body text-[11px] font-medium tracking-[0.3em] uppercase text-foreground"
+          className="font-brand text-[11px] font-medium tracking-[0.3em] uppercase text-foreground"
         >
           PROTOTYPE MEDIA
         </Link>
