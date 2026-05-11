@@ -57,7 +57,7 @@ const HeroSection = () => {
           }`}
           style={{ fontWeight: 500 }}
         >
-          PRO<span style={{ letterSpacing: "0.08em" }}>T</span>OTYPE
+          PROTO<span style={{ letterSpacing: "0.12em" }}>T</span>YPE
           <br />
           MEDIA
         </h1>
