@@ -58,13 +58,34 @@ const ProjectCard = ({
   index: number;
 }) => {
   const [hovered, setHovered] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(index === 0);
+  const cardRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (shouldLoadVideo || !project.video) return;
+    // Defer non-first videos until they're near the viewport
+    const el = cardRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setShouldLoadVideo(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [shouldLoadVideo, project.video]);
 
   const handleClick = () => {
     navigate(`/work/${project.slug}`);
   };
   return (
     <div
+      ref={cardRef}
       data-cursor="expand"
       onClick={handleClick}
       onMouseEnter={() => setHovered(true)}
@@ -75,12 +96,13 @@ const ProjectCard = ({
       style={{ transitionDelay: `${index * 150}ms` }}
     >
       {/* Video, image, or gradient background */}
-      {project.video ? (
+      {project.video && shouldLoadVideo ? (
         <video
           autoPlay
           muted
           loop
           playsInline
+          preload={index === 0 ? "auto" : "metadata"}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
           style={{ transform: hovered ? "scale(1.05)" : "scale(1)" }}
           src={project.video}
@@ -89,6 +111,7 @@ const ProjectCard = ({
         <img
           src={project.image}
           alt={project.title}
+          loading={index === 0 ? "eager" : "lazy"}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
           style={{ transform: hovered ? "scale(1.05)" : "scale(1)" }}
         />
