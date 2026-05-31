@@ -34,7 +34,7 @@ const LogoTicker = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-background py-12 md:py-16"
+      className="relative w-full overflow-hidden bg-background py-5 md:py-6"
       style={{
         WebkitMaskImage:
           "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
@@ -47,7 +47,7 @@ const LogoTicker = () => {
         className="flex w-max animate-ticker hover:[animation-play-state:paused]"
       >
         {items.map((logo, i) => {
-          const larger = ["Ushuaia Dubai", "Klangkuenstler", "Surf Club Dubai"].includes(logo.alt);
+          const larger = ["Ushuaia Dubai", "Klangkuenstler", "Surf Club Dubai", "Mahmut Orhan", "Be Beach Dubai", "Atlas Super Club"].includes(logo.alt);
           return (
             <div
               key={`${logo.src}-${i}`}
