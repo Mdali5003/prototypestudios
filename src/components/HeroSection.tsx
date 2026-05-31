@@ -52,12 +52,12 @@ const HeroSection = () => {
         </p>
 
         <h1
-          className={`font-brand text-[clamp(3rem,10vw,9rem)] leading-[0.9] tracking-[0.02em] text-foreground transition-all duration-[1400ms] delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          className={`font-display text-[clamp(3rem,10vw,9rem)] leading-[0.9] tracking-[0.02em] text-foreground transition-all duration-[1400ms] delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
-          style={{ fontWeight: 500 }}
+          style={{ fontWeight: 300 }}
         >
-          PROTO<span style={{ letterSpacing: "0.12em" }}>T</span>YPE
+          PROTOTYPE
           <br />
           MEDIA
         </h1>
