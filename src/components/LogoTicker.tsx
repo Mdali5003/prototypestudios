@@ -51,13 +51,13 @@ const LogoTicker = () => {
           return (
             <div
               key={`${logo.src}-${i}`}
-              className="flex items-center justify-center w-[180px] md:w-[220px] h-20 md:h-24 px-6 md:px-8 border-r border-[hsl(0,0%,12%)] shrink-0"
+              className="flex items-center justify-center w-[200px] md:w-[260px] h-24 md:h-28 px-6 md:px-8 border-r border-[hsl(0,0%,12%)] shrink-0"
             >
               <img
                 src={logo.src}
                 alt={logo.alt}
                 loading="lazy"
-                className={`${larger ? "max-h-12 md:max-h-16" : "max-h-8 md:max-h-10"} max-w-full w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300`}
+                className={`${larger ? "max-h-14 md:max-h-20" : "max-h-11 md:max-h-14"} max-w-full w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300`}
                 style={{ filter: "brightness(0) invert(1)" }}
               />
             </div>
