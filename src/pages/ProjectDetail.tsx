@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Play, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import CustomCursor from "@/components/CustomCursor";
+import sfSadete from "@/assets/sf-sadete.mp4.asset.json";
+import sfIceIce from "@/assets/sf-ice-ice.mp4.asset.json";
 
 interface MediaItem {
   id: number;
@@ -47,13 +49,15 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
       { id: 1, src: "/portfolio/sf-b3b-moblack.mp4", title: "B3B MOBLACK", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/82a1e26f-b954-4d40-bf67-0bdcec7e0013" },
       { id: 2, src: "/portfolio/sf-amelie.mp4", title: "AMELIE", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/fcd8ad4c-90bb-4bf7-ad32-3fa0b5b1468c" },
       { id: 3, src: "/portfolio/sf-reel22.mp4", title: "REEL", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/57b36bc1-c6a8-4851-ac8a-a189f2b3e4e1" },
-      { id: 4, src: "/portfolio/sf-ga.mp4", title: "G&A", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/2892c726-5a25-401b-ba32-380070ea9c62" },
-      { id: 5, src: "/portfolio/sf-honeyluv.mp4", title: "HONEYLUV", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/3cd3157d-5cfd-4ec7-bda0-95164e86725a" },
-      { id: 6, src: "/portfolio/sf-livak.mp4", title: "LIVA K", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/f7c6d3a2-3718-4011-963e-d1736caff686" },
-      { id: 7, src: "/portfolio/sf-hilde.mp4", title: "HILDE", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/eff57e74-c32f-4ccf-8f0f-a539fbc50b46" },
-      { id: 8, src: "/portfolio/sf-ona-missrich.mp4", title: "ONA & MISS RICH", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/950514ee-2453-45f5-ac5b-eaf276d7d454" },
-      { id: 9, src: "/portfolio/sf-arcadian.mp4", title: "ARCADIAN", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/341cca8e-6dfa-4fc2-934b-5721180c4b00" },
+      { id: 4, src: sfSadete.url, title: "SADETE", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/2c8238ef-a709-4a0b-ac0e-2820fca99c48" },
       { id: 10, src: "/portfolio/sf-francis.mp4", title: "FRANCIS", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/7d469091-74fd-4da9-87e5-e87118b0fd6c" },
+      { id: 11, src: sfIceIce.url, title: "ICE ICE", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/9935ed4b-0a99-434f-b03c-4a9c5a64d3b1" },
+      { id: 5, src: "/portfolio/sf-ga.mp4", title: "G&A", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/2892c726-5a25-401b-ba32-380070ea9c62" },
+      { id: 6, src: "/portfolio/sf-honeyluv.mp4", title: "HONEYLUV", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/3cd3157d-5cfd-4ec7-bda0-95164e86725a" },
+      { id: 7, src: "/portfolio/sf-livak.mp4", title: "LIVA K", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/f7c6d3a2-3718-4011-963e-d1736caff686" },
+      { id: 8, src: "/portfolio/sf-hilde.mp4", title: "HILDE", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/eff57e74-c32f-4ccf-8f0f-a539fbc50b46" },
+      { id: 9, src: "/portfolio/sf-ona-missrich.mp4", title: "ONA & MISS RICH", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/950514ee-2453-45f5-ac5b-eaf276d7d454" },
+      { id: 12, src: "/portfolio/sf-arcadian.mp4", title: "ARCADIAN", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/341cca8e-6dfa-4fc2-934b-5721180c4b00" },
     ],
   },
   photos: {
