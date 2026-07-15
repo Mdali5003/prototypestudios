@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Play, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import CustomCursor from "@/components/CustomCursor";
+import sfSadete from "@/assets/sf-sadete.mp4.asset.json";
+import sfIceIce from "@/assets/sf-ice-ice.mp4.asset.json";
 
 interface MediaItem {
   id: number;
