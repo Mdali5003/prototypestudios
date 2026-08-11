@@ -2,63 +2,18 @@ import { useState, useEffect } from "react";
 import { getSubmissions, FormSubmission } from "@/lib/formStore";
 import { useNavigate } from "react-router-dom";
 
-const ADMIN_PASSWORD = "prototype2024";
-
+// NOTE: Submissions are stored in this browser's localStorage only. This page
+// renders data the visitor already owns, so there is nothing here to gate.
+// A client-side password check would be trivially bypassable and would give a
+// false sense of protection. Real access control requires a backend.
 const AdminPortal = () => {
-  const [authenticated, setAuthenticated] = useState(false);
-  const [password, setPassword] = useState("");
   const [submissions, setSubmissions] = useState<FormSubmission[]>([]);
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (authenticated) {
-      setSubmissions(getSubmissions());
-    }
-  }, [authenticated]);
+    setSubmissions(getSubmissions());
+  }, []);
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (password === ADMIN_PASSWORD) {
-      setAuthenticated(true);
-      setError("");
-    } else {
-      setError("Incorrect password");
-    }
-  };
-
-  if (!authenticated) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center px-6">
-        <form onSubmit={handleLogin} className="w-full max-w-sm space-y-6">
-          <h1 className="font-display text-2xl text-foreground text-center tracking-wide" style={{ fontWeight: 300 }}>
-            ADMIN ACCESS
-          </h1>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="PASSWORD"
-            className="w-full bg-transparent border-b border-[hsl(0,0%,20%)] py-4 font-body text-[13px] tracking-[0.15em] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-foreground transition-colors duration-300"
-          />
-          {error && <p className="font-body text-[11px] text-red-500 tracking-wide">{error}</p>}
-          <button
-            type="submit"
-            className="w-full font-body text-[11px] tracking-[0.25em] uppercase px-10 py-4 border border-[hsl(0,0%,30%)] text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
-          >
-            ENTER
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate("/")}
-            className="w-full font-body text-[11px] tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
-          >
-            ← BACK TO SITE
-          </button>
-        </form>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-background text-foreground px-6 md:px-12 py-16">
@@ -82,6 +37,13 @@ const AdminPortal = () => {
             </button>
           </div>
         </div>
+
+        <p className="font-body text-[11px] tracking-[0.15em] text-muted-foreground/70 leading-relaxed border border-[hsl(0,0%,12%)] p-4 mb-10">
+          LOCAL PREVIEW ONLY — RESPONSES ARE SAVED IN THIS BROWSER AND ARE NOT SENT ANYWHERE.
+          FORMS SUBMITTED BY VISITORS ON OTHER DEVICES WILL NOT APPEAR HERE.
+        </p>
+
+
 
         {submissions.length === 0 ? (
           <p className="font-body text-[13px] text-muted-foreground tracking-wide text-center py-20">
