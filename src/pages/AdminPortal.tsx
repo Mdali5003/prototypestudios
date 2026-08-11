@@ -38,6 +38,13 @@ const AdminPortal = () => {
           </div>
         </div>
 
+        <p className="font-body text-[11px] tracking-[0.15em] text-muted-foreground/70 leading-relaxed border border-[hsl(0,0%,12%)] p-4 mb-10">
+          LOCAL PREVIEW ONLY — RESPONSES ARE SAVED IN THIS BROWSER AND ARE NOT SENT ANYWHERE.
+          FORMS SUBMITTED BY VISITORS ON OTHER DEVICES WILL NOT APPEAR HERE.
+        </p>
+
+
+
         {submissions.length === 0 ? (
           <p className="font-body text-[13px] text-muted-foreground tracking-wide text-center py-20">
             NO SUBMISSIONS YET
