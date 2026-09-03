@@ -96,7 +96,7 @@ const LogoTicker = () => {
     const track = trackRef.current;
     if (!track) return;
     const dx = e.clientX - dragStartXRef.current;
-    if (Math.abs(dx) > 3) movedRef.current = true;
+    if (Math.abs(dx) > 8) movedRef.current = true;
     offsetRef.current = dragStartOffsetRef.current + dx;
     const half = halfWidthRef.current;
     if (half > 0) {
