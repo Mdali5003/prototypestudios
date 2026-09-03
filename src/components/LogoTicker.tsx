@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Logo {
   src: string;
   alt: string;
+  link?: string;
 }
 
 const logos: Logo[] = [
@@ -18,7 +20,7 @@ const logos: Logo[] = [
   { src: "/logos/aaron-sevilla.png", alt: "Aaron Sevilla" },
   { src: "/logos/i-hate-models.png", alt: "I Hate Models" },
   { src: "/logos/shimza.webp", alt: "Shimza" },
-  { src: "/logos/mahmut-orhan.png", alt: "Mahmut Orhan" },
+  { src: "/logos/mahmut-orhan.png", alt: "Mahmut Orhan", link: "/mahmutorhan" },
   { src: "/logos/be-beach.png", alt: "Be Beach Dubai" },
   { src: "/logos/atlas-super-club.png", alt: "Atlas Super Club" },
 ];
@@ -26,6 +28,7 @@ const logos: Logo[] = [
 const SPEED = 60; // px per second
 
 const LogoTicker = () => {
+  const navigate = useNavigate();
   const trackRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
   const halfWidthRef = useRef(0);
@@ -142,7 +145,9 @@ const LogoTicker = () => {
           return (
             <div
               key={`${logo.src}-${i}`}
-              className="flex items-center justify-center w-[200px] md:w-[260px] h-24 md:h-28 px-6 md:px-8 border-r border-[hsl(0,0%,12%)] shrink-0"
+              onClick={logo.link ? () => navigate(logo.link!) : undefined}
+              data-cursor={logo.link ? "expand" : undefined}
+              className={`flex items-center justify-center w-[200px] md:w-[260px] h-24 md:h-28 px-6 md:px-8 border-r border-[hsl(0,0%,12%)] shrink-0 ${logo.link ? "cursor-pointer" : ""}`}
             >
               <img
                 src={logo.src}
