@@ -33,6 +33,7 @@ const LogoTicker = () => {
   const offsetRef = useRef(0);
   const halfWidthRef = useRef(0);
   const draggingRef = useRef(false);
+  const pausedRef = useRef(false);
   const dragStartXRef = useRef(0);
   const dragStartOffsetRef = useRef(0);
   const movedRef = useRef(false);
@@ -66,7 +67,7 @@ const LogoTicker = () => {
     const tick = (ts: number) => {
       const dt = (ts - lastTs) / 1000;
       lastTs = ts;
-      if (!draggingRef.current) {
+      if (!draggingRef.current && !pausedRef.current) {
         offsetRef.current -= SPEED * dt;
         wrap();
         track.style.transform = `translate3d(${offsetRef.current}px,0,0)`;
@@ -131,6 +132,8 @@ const LogoTicker = () => {
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
+        onMouseEnter={() => { pausedRef.current = true; }}
+        onMouseLeave={() => { pausedRef.current = false; }}
         onClickCapture={(e) => {
           if (movedRef.current) {
             e.preventDefault();
