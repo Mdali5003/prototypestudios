@@ -9,7 +9,7 @@ interface Logo {
 
 const logos: Logo[] = [
   { src: "/logos/savaya.png", alt: "Savaya" },
-  { src: "/logos/ushuaia.png", alt: "Ushuaia Dubai" },
+  { src: "/logos/ushuaia.png", alt: "Ushuaia Dubai", link: "/clubs/ushuaia-dubai-harbour" },
   { src: "/logos/soho-garden.png", alt: "Soho Garden" },
   { src: "/logos/surf-club-dubai.png", alt: "Surf Club Dubai" },
   { src: "/logos/klangunstler.jpg", alt: "Klangkuenstler" },

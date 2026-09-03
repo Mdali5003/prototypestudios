@@ -7,12 +7,14 @@ interface Clip {
   id: number;
   src: string;
   title: string;
+  type?: "video" | "photo";
 }
 
 interface Club {
   name: string;
   subtitle: string;
   clips: Clip[];
+  columns?: number;
 }
 
 const clubs: Record<string, Club> = {
@@ -26,6 +28,22 @@ const clubs: Record<string, Club> = {
       { id: 4, src: "/atlassuperclub/atlassuperclub-4.mp4", title: "SYLK 2" },
       { id: 5, src: "/atlassuperclub/atlassuperclub-5.mp4", title: "FIREBEATZ 1" },
       { id: 6, src: "/atlassuperclub/atlassuperclub-6.mp4", title: "FIREBEATZ 2" },
+    ],
+  },
+  "ushuaia-dubai-harbour": {
+    name: "USHUAIA",
+    subtitle: "DUBAI HARBOUR",
+    columns: 3,
+    clips: [
+      { id: 1, src: "/ushuaia-dubai-harbour/ushuaia-1.png", title: "USHUAIA 1", type: "photo" },
+      { id: 2, src: "/ushuaia-dubai-harbour/ushuaia-2.png", title: "USHUAIA 2", type: "photo" },
+      { id: 3, src: "/ushuaia-dubai-harbour/ushuaia-3.png", title: "USHUAIA 3", type: "photo" },
+      { id: 4, src: "/ushuaia-dubai-harbour/ushuaia-4.mp4", title: "USHUAIA 4", type: "video" },
+      { id: 5, src: "/ushuaia-dubai-harbour/ushuaia-5.mp4", title: "USHUAIA 5", type: "video" },
+      { id: 6, src: "/ushuaia-dubai-harbour/ushuaia-6.mp4", title: "USHUAIA 6", type: "video" },
+      { id: 7, src: "/ushuaia-dubai-harbour/ushuaia-7.mp4", title: "USHUAIA 7", type: "video" },
+      { id: 8, src: "/ushuaia-dubai-harbour/ushuaia-8.mp4", title: "USHUAIA 8", type: "video" },
+      { id: 9, src: "/ushuaia-dubai-harbour/ushuaia-9.mp4", title: "USHUAIA 9", type: "video" },
     ],
   },
 };
@@ -57,7 +75,8 @@ const ClubDetail = () => {
     );
   }
 
-  const activeClip = club.clips.find((c) => c.id === activeId) ?? null;
+  const activeClip = club.clips.find((c) => c.id === activeId && c.type !== "photo") ?? null;
+  const gridCols = club.columns ?? 4;
 
   return (
     <div
@@ -95,10 +114,23 @@ const ClubDetail = () => {
       </header>
 
       <section className="px-4 md:px-8 pb-12 md:pb-24">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-          {club.clips.map((clip) => (
-            <ClipCard key={clip.id} clip={clip} onOpen={() => setActiveId(clip.id)} />
-          ))}
+        <div
+          className={`grid gap-2 ${
+            gridCols === 3 ? "grid-cols-3" : "grid-cols-2 md:grid-cols-4"
+          }`}
+        >
+          {club.clips.map((clip) =>
+            clip.type === "photo" ? (
+              <PhotoCard key={clip.id} clip={clip} square={gridCols === 3} />
+            ) : (
+              <ClipCard
+                key={clip.id}
+                clip={clip}
+                square={gridCols === 3}
+                onOpen={() => setActiveId(clip.id)}
+              />
+            )
+          )}
         </div>
       </section>
 
@@ -117,7 +149,6 @@ const ClubDetail = () => {
           <video
             src={activeClip.src}
             className="max-h-[90vh] max-w-[90vw]"
-            style={{ aspectRatio: "9 / 16" }}
             autoPlay
             controls
             playsInline
@@ -129,7 +160,15 @@ const ClubDetail = () => {
   );
 };
 
-const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
+const ClipCard = ({
+  clip,
+  onOpen,
+  square,
+}: {
+  clip: Clip;
+  onOpen: () => void;
+  square?: boolean;
+}) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -138,7 +177,7 @@ const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
       onClick={onOpen}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative overflow-hidden aspect-[9/16] cursor-pointer"
+      className={`relative overflow-hidden cursor-pointer ${square ? "aspect-square" : "aspect-[9/16]"}`}
     >
       <video
         autoPlay
@@ -161,6 +200,41 @@ const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
       >
         <Play size={32} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
       </div>
+      <div className="absolute inset-0 flex items-end p-4 z-10 pointer-events-none">
+        <p
+          className={`font-body text-[10px] tracking-[0.3em] text-foreground transition-all duration-500 ${
+            hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+          }`}
+        >
+          {clip.title}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const PhotoCard = ({ clip, square }: { clip: Clip; square?: boolean }) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      data-cursor="expand"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className={`relative overflow-hidden ${square ? "aspect-square" : "aspect-[3/4]"}`}
+    >
+      <img
+        src={clip.src}
+        alt={clip.title}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+        style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
+      />
+      <div
+        className={`absolute inset-0 bg-background/20 transition-opacity duration-500 ${
+          hovered ? "opacity-100" : "opacity-0"
+        }`}
+      />
       <div className="absolute inset-0 flex items-end p-4 z-10 pointer-events-none">
         <p
           className={`font-body text-[10px] tracking-[0.3em] text-foreground transition-all duration-500 ${
