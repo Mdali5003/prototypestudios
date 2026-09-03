@@ -14,15 +14,15 @@ const logos: Logo[] = [
   { src: "/logos/surf-club-dubai.png", alt: "Surf Club Dubai" },
   { src: "/logos/klangunstler.jpg", alt: "Klangkuenstler" },
   { src: "/logos/amelie-lens.png", alt: "Amelie Lens" },
-  { src: "/logos/francis-mercier.png", alt: "Francis Mercier" },
+  { src: "/logos/francis-mercier.png", alt: "Francis Mercier", link: "/artists/francis-mercier" },
   { src: "/logos/mo-black.png", alt: "MoBlack" },
   { src: "/logos/gioli-assia.png", alt: "Gioli & Assia" },
-  { src: "/logos/aaron-sevilla.png", alt: "Aaron Sevilla" },
+  { src: "/logos/aaron-sevilla.png", alt: "Aaron Sevilla", link: "/artists/aaron-sevilla" },
   { src: "/logos/i-hate-models.png", alt: "I Hate Models" },
   { src: "/logos/shimza.webp", alt: "Shimza" },
   { src: "/logos/mahmut-orhan.png", alt: "Mahmut Orhan", link: "/artists/mahmut-orhan" },
   { src: "/logos/be-beach.png", alt: "Be Beach Dubai" },
-  { src: "/logos/atlas-super-club.png", alt: "Atlas Super Club" },
+  { src: "/logos/atlas-super-club.png", alt: "Atlas Super Club", link: "/clubs/atlassuperclub" },
 ];
 
 const SPEED = 60; // px per second

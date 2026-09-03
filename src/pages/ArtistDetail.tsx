@@ -32,6 +32,42 @@ const artists: Record<string, Artist> = {
       { id: 10, src: "/mahmutorhan/12.mp4", title: "12" },
     ],
   },
+  "francis-mercier": {
+    name: "FRANCIS MERCIER",
+    subtitle: "SAVAYA BALI",
+    clips: [
+      { id: 1, src: "/francis-mercier/francis-mercier-1.mp4", title: "FRANCIS MERCIER 1" },
+      { id: 2, src: "/francis-mercier/francis-mercier-2.mp4", title: "FRANCIS MERCIER 2" },
+      { id: 3, src: "/francis-mercier/francis-mercier-3.mp4", title: "FRANCIS MERCIER 3" },
+      { id: 4, src: "/francis-mercier/francis-mercier-4.mp4", title: "FRANCIS MERCIER 4" },
+      { id: 5, src: "/francis-mercier/francis-mercier-5.mp4", title: "FRANCIS MERCIER 5" },
+      { id: 6, src: "/francis-mercier/francis-mercier-6.mp4", title: "FRANCIS MERCIER 6" },
+    ],
+  },
+  "aaron-sevilla": {
+    name: "AARON SEVILLA",
+    subtitle: "SAVAYA BALI",
+    clips: [
+      { id: 1, src: "/aaron-sevilla/aaron-sevilla-1.mp4", title: "AARON SEVILLA 1" },
+      { id: 2, src: "/aaron-sevilla/aaron-sevilla-2.mp4", title: "AARON SEVILLA 2" },
+      { id: 3, src: "/aaron-sevilla/aaron-sevilla-3.mp4", title: "AARON SEVILLA 3" },
+      { id: 4, src: "/aaron-sevilla/aaron-sevilla-4.mp4", title: "AARON SEVILLA 4" },
+      { id: 5, src: "/aaron-sevilla/aaron-sevilla-5.mp4", title: "AARON SEVILLA 5" },
+      { id: 6, src: "/aaron-sevilla/aaron-sevilla-6.mp4", title: "AARON SEVILLA 6" },
+    ],
+  },
+  "and-friends": {
+    name: "&FRIENDS",
+    subtitle: "SAVAYA BALI",
+    clips: [
+      { id: 1, src: "/and-friends/and-friends-1.mp4", title: "&FRIENDS 1" },
+      { id: 2, src: "/and-friends/and-friends-2.mp4", title: "&FRIENDS 2" },
+      { id: 3, src: "/and-friends/and-friends-3.mp4", title: "&FRIENDS 3" },
+      { id: 4, src: "/and-friends/and-friends-4.mp4", title: "&FRIENDS 4" },
+      { id: 5, src: "/and-friends/and-friends-5.mp4", title: "&FRIENDS 5" },
+      { id: 6, src: "/and-friends/and-friends-6.mp4", title: "&FRIENDS 6" },
+    ],
+  },
 };
 
 const ArtistDetail = () => {
