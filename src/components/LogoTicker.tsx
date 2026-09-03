@@ -20,7 +20,7 @@ const logos: Logo[] = [
   { src: "/logos/aaron-sevilla.png", alt: "Aaron Sevilla" },
   { src: "/logos/i-hate-models.png", alt: "I Hate Models" },
   { src: "/logos/shimza.webp", alt: "Shimza" },
-  { src: "/logos/mahmut-orhan.png", alt: "Mahmut Orhan", link: "/mahmutorhan" },
+  { src: "/logos/mahmut-orhan.png", alt: "Mahmut Orhan", link: "/artists/mahmut-orhan" },
   { src: "/logos/be-beach.png", alt: "Be Beach Dubai" },
   { src: "/logos/atlas-super-club.png", alt: "Atlas Super Club" },
 ];

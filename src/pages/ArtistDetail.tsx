@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Play, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import CustomCursor from "@/components/CustomCursor";
@@ -9,22 +9,36 @@ interface Clip {
   title: string;
 }
 
-const clips: Clip[] = [
-  { id: 1, src: "/mahmutorhan/1-u.mp4", title: "1 U" },
-  { id: 2, src: "/mahmutorhan/2.mp4", title: "2" },
-  { id: 3, src: "/mahmutorhan/2-tash.mp4", title: "2 TASH" },
-  { id: 4, src: "/mahmutorhan/4.mp4", title: "4" },
-  { id: 5, src: "/mahmutorhan/4-a.mp4", title: "4 A" },
-  { id: 6, src: "/mahmutorhan/4-t.mp4", title: "4 T" },
-  { id: 7, src: "/mahmutorhan/4-tash.mp4", title: "4 TASH" },
-  { id: 8, src: "/mahmutorhan/8-astana.mp4", title: "8 ASTANA" },
-  { id: 9, src: "/mahmutorhan/8-t.mp4", title: "8 T" },
-  { id: 10, src: "/mahmutorhan/12.mp4", title: "12" },
-];
+interface Artist {
+  name: string;
+  subtitle: string;
+  clips: Clip[];
+}
 
-const MahmutOrhan = () => {
+const artists: Record<string, Artist> = {
+  "mahmut-orhan": {
+    name: "MAHMUT ORHAN",
+    subtitle: "CENTRAL ASIA TOUR",
+    clips: [
+      { id: 1, src: "/mahmutorhan/1-u.mp4", title: "1 U" },
+      { id: 2, src: "/mahmutorhan/2.mp4", title: "2" },
+      { id: 3, src: "/mahmutorhan/2-tash.mp4", title: "2 TASH" },
+      { id: 4, src: "/mahmutorhan/4.mp4", title: "4" },
+      { id: 5, src: "/mahmutorhan/4-a.mp4", title: "4 A" },
+      { id: 6, src: "/mahmutorhan/4-t.mp4", title: "4 T" },
+      { id: 7, src: "/mahmutorhan/4-tash.mp4", title: "4 TASH" },
+      { id: 8, src: "/mahmutorhan/8-astana.mp4", title: "8 ASTANA" },
+      { id: 9, src: "/mahmutorhan/8-t.mp4", title: "8 T" },
+      { id: 10, src: "/mahmutorhan/12.mp4", title: "12" },
+    ],
+  },
+};
+
+const ArtistDetail = () => {
+  const { slug } = useParams<{ slug: string }>();
   const [loaded, setLoaded] = useState(false);
   const [activeId, setActiveId] = useState<number | null>(null);
+  const artist = slug ? artists[slug] : null;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,7 +53,15 @@ const MahmutOrhan = () => {
     };
   }, [activeId]);
 
-  const activeClip = clips.find((c) => c.id === activeId) ?? null;
+  if (!artist) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <p className="text-foreground font-body text-sm tracking-widest">ARTIST NOT FOUND</p>
+      </div>
+    );
+  }
+
+  const activeClip = artist.clips.find((c) => c.id === activeId) ?? null;
 
   return (
     <div
@@ -66,19 +88,19 @@ const MahmutOrhan = () => {
 
       <header className="pt-20 md:pt-28 flex flex-col items-center justify-center relative pb-3 md:pb-4">
         <p className="font-body text-[8px] md:text-[10px] tracking-[0.3em] text-muted-foreground mb-1 md:mb-2">
-          MAHMUT ORHAN
+          {artist.subtitle}
         </p>
         <h1
           className="font-display text-2xl md:text-5xl tracking-[0.04em] text-foreground text-center"
           style={{ fontWeight: 300 }}
         >
-          MAHMUT ORHAN
+          {artist.name}
         </h1>
       </header>
 
       <section className="px-4 md:px-8 pb-12 md:pb-24">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-          {clips.map((clip) => (
+          {artist.clips.map((clip) => (
             <ClipCard key={clip.id} clip={clip} onOpen={() => setActiveId(clip.id)} />
           ))}
         </div>
@@ -156,4 +178,4 @@ const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
   );
 };
 
-export default MahmutOrhan;
+export default ArtistDetail;
