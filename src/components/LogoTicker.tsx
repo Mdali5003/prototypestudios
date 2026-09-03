@@ -89,7 +89,10 @@ const LogoTicker = () => {
     movedRef.current = false;
     dragStartXRef.current = e.clientX;
     dragStartOffsetRef.current = offsetRef.current;
-    track.setPointerCapture(e.pointerId);
+    // Capture is deferred to onPointerMove (only once an actual drag is
+    // detected) — capturing here unconditionally would redirect every
+    // subsequent pointerup/click to the track itself, silently swallowing
+    // clicks on the individual logo links.
   };
 
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -97,7 +100,10 @@ const LogoTicker = () => {
     const track = trackRef.current;
     if (!track) return;
     const dx = e.clientX - dragStartXRef.current;
-    if (Math.abs(dx) > 8) movedRef.current = true;
+    if (Math.abs(dx) > 8 && !movedRef.current) {
+      movedRef.current = true;
+      if (!track.hasPointerCapture(e.pointerId)) track.setPointerCapture(e.pointerId);
+    }
     offsetRef.current = dragStartOffsetRef.current + dx;
     const half = halfWidthRef.current;
     if (half > 0) {
