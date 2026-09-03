@@ -8,6 +8,7 @@ import ProjectDetail from "./pages/ProjectDetail.tsx";
 import AdminPortal from "./pages/AdminPortal.tsx";
 import ArtistDetail from "./pages/ArtistDetail.tsx";
 import ClubDetail from "./pages/ClubDetail.tsx";
+import Awakenings from "./pages/Awakenings.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/admin" element={<AdminPortal />} />
           <Route path="/artists/:slug" element={<ArtistDetail />} />
           <Route path="/clubs/:slug" element={<ClubDetail />} />
+          <Route path="/awakenings" element={<Awakenings />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
