@@ -51,14 +51,12 @@ const clubs: Record<string, Club> = {
   savaya: {
     name: "SAVAYA",
     subtitle: "BALI",
-    columns: 3,
     titleFirst: true,
     clips: [
       { id: 1, src: "/savaya/savaya-1.mp4", title: "&FRIENDS 1", link: "https://player.mediadelivery.net/play/626251/9cfb6945-c236-4718-ae00-6cb09586328c" },
       { id: 2, src: "/savaya/savaya-2.mp4", title: "&FRIENDS 2", link: "https://player.mediadelivery.net/play/626251/715e1fcd-c630-4ffc-afaf-c68ee2c81230" },
       { id: 3, src: "/savaya/savaya-3.mp4", title: "&FRIENDS 3", link: "https://player.mediadelivery.net/play/626251/59537903-4f21-44f0-961e-2cd956a72c6c" },
       { id: 4, src: "/savaya/savaya-4.mp4", title: "ESTA COBARDÍA — AARON SEVILLA, P RIVAS & OLIVER GIL", link: "https://player.mediadelivery.net/play/626251/fda37ff8-6b6b-4daa-8ac7-05a2cf3b73b2" },
-      { id: 5, src: "/savaya/savaya-5.mp4", title: "ESTILO GITANO — AARON SEVILLA, P RIVAS & OLIVER GIL", link: "https://player.mediadelivery.net/play/626251/b1a5b0ab-f359-413a-bd89-3fcd4ac9fda3" },
       { id: 6, src: "/savaya/savaya-6.mp4", title: "FAVELA — AARON SEVILLA & ARKAD3", link: "https://player.mediadelivery.net/play/626251/eb94fa40-e05a-4d7e-a190-3803bdb520f1" },
       { id: 7, src: "/savaya/savaya-7.mp4", title: "FRANCIS MERCIER 9", link: "https://player.mediadelivery.net/play/626251/6f520f49-d0e3-4fcb-b51f-a3ac4026f14f" },
       { id: 8, src: "/savaya/savaya-8.mp4", title: "FRANCIS MERCIER — SAVAYA", link: "https://player.mediadelivery.net/play/626251/f5dae8f6-6d4d-4d44-82ae-7c366a2da111" },
