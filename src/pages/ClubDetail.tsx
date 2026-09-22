@@ -8,6 +8,7 @@ interface Clip {
   src: string;
   title: string;
   type?: "video" | "photo";
+  link?: string;
 }
 
 interface Club {
@@ -15,6 +16,7 @@ interface Club {
   subtitle: string;
   clips: Clip[];
   columns?: number;
+  titleFirst?: boolean;
 }
 
 const clubs: Record<string, Club> = {
@@ -44,6 +46,33 @@ const clubs: Record<string, Club> = {
       { id: 7, src: "/ushuaia-dubai-harbour/ushuaia-7.mp4", title: "USHUAIA 7", type: "video" },
       { id: 8, src: "/ushuaia-dubai-harbour/ushuaia-8.mp4", title: "USHUAIA 8", type: "video" },
       { id: 9, src: "/ushuaia-dubai-harbour/ushuaia-9.mp4", title: "USHUAIA 9", type: "video" },
+    ],
+  },
+  savaya: {
+    name: "SAVAYA",
+    subtitle: "BALI",
+    columns: 3,
+    titleFirst: true,
+    clips: [
+      { id: 1, src: "/savaya/savaya-1.mp4", title: "&FRIENDS 1", link: "https://player.mediadelivery.net/play/626251/9cfb6945-c236-4718-ae00-6cb09586328c" },
+      { id: 2, src: "/savaya/savaya-2.mp4", title: "&FRIENDS 2", link: "https://player.mediadelivery.net/play/626251/715e1fcd-c630-4ffc-afaf-c68ee2c81230" },
+      { id: 3, src: "/savaya/savaya-3.mp4", title: "&FRIENDS 3", link: "https://player.mediadelivery.net/play/626251/59537903-4f21-44f0-961e-2cd956a72c6c" },
+      { id: 4, src: "/savaya/savaya-4.mp4", title: "ESTA COBARDÍA — AARON SEVILLA, P RIVAS & OLIVER GIL", link: "https://player.mediadelivery.net/play/626251/fda37ff8-6b6b-4daa-8ac7-05a2cf3b73b2" },
+      { id: 5, src: "/savaya/savaya-5.mp4", title: "ESTILO GITANO — AARON SEVILLA, P RIVAS & OLIVER GIL", link: "https://player.mediadelivery.net/play/626251/b1a5b0ab-f359-413a-bd89-3fcd4ac9fda3" },
+      { id: 6, src: "/savaya/savaya-6.mp4", title: "FAVELA — AARON SEVILLA & ARKAD3", link: "https://player.mediadelivery.net/play/626251/eb94fa40-e05a-4d7e-a190-3803bdb520f1" },
+      { id: 7, src: "/savaya/savaya-7.mp4", title: "FRANCIS MERCIER 9", link: "https://player.mediadelivery.net/play/626251/6f520f49-d0e3-4fcb-b51f-a3ac4026f14f" },
+      { id: 8, src: "/savaya/savaya-8.mp4", title: "FRANCIS MERCIER — SAVAYA", link: "https://player.mediadelivery.net/play/626251/f5dae8f6-6d4d-4d44-82ae-7c366a2da111" },
+      { id: 9, src: "/savaya/savaya-9.mp4", title: "FRANCIS MERCIER — SAVAYA 2", link: "https://player.mediadelivery.net/play/626251/d30f9436-3e02-4908-969d-f580e0ee55b9" },
+      { id: 10, src: "/savaya/savaya-10.mp4", title: "ID", link: "https://player.mediadelivery.net/play/626251/3e5f3f1e-94ef-4ee2-b80d-9d470b589f36" },
+      { id: 11, src: "/savaya/savaya-11.mp4", title: "&FRIENDS — REEL 9", link: "https://player.mediadelivery.net/play/626251/f0ac4165-f3cd-4606-8683-d3d38af1e253" },
+      { id: 12, src: "/savaya/savaya-12.mp4", title: "AARON SEVILLA — REEL 11", link: "https://player.mediadelivery.net/play/626251/8ad4c5b5-b99c-4416-8dab-5b575441ad74" },
+      { id: 13, src: "/savaya/savaya-13.mp4", title: "AARON SEVILLA — REEL 14", link: "https://player.mediadelivery.net/play/626251/82d8bb8a-f8bf-4ff3-bc16-fc523ab27cbb" },
+      { id: 14, src: "/savaya/savaya-14.mp4", title: "&FRIENDS — REEL 14", link: "https://player.mediadelivery.net/play/626251/0ea2e168-77d4-46da-be94-2c1cc2899c63" },
+      { id: 15, src: "/savaya/savaya-15.mp4", title: "HAYDEN JAMES", link: "https://player.mediadelivery.net/play/626251/581ce356-7f06-4244-b97f-b895e347524c" },
+      { id: 16, src: "/savaya/savaya-16.mp4", title: "&FRIENDS — REEL 15", link: "https://player.mediadelivery.net/play/626251/bf299823-a72d-4c1c-9201-c1d5f39c8f9b" },
+      { id: 17, src: "/savaya/savaya-17.mp4", title: "AARON SEVILLA — REEL 17", link: "https://player.mediadelivery.net/play/626251/2eb256bc-53bd-4fdc-a2f1-625bbd6e34a2" },
+      { id: 18, src: "/savaya/savaya-18.mp4", title: "TIC TAC — AARON SEVILLA, FLAVOUR PLUS & FRAN PEREZ", link: "https://player.mediadelivery.net/play/626251/169f64d7-4ed8-44de-97b7-47c2882341f2" },
+      { id: 19, src: "/savaya/savaya-19.mp4", title: "TUTTO BENE — AARON SEVILLA, BENY JUNIOR & SAHAR SAX", link: "https://player.mediadelivery.net/play/626251/19ddb2cb-ea05-4ca5-bad8-08dc864043f5" },
     ],
   },
 };
@@ -102,15 +131,31 @@ const ClubDetail = () => {
       </nav>
 
       <header className="pt-20 md:pt-28 flex flex-col items-center justify-center relative pb-3 md:pb-4">
-        <p className="font-body text-[8px] md:text-[10px] tracking-[0.3em] text-muted-foreground mb-1 md:mb-2">
-          {club.subtitle}
-        </p>
-        <h1
-          className="font-display text-2xl md:text-5xl tracking-[0.04em] text-foreground text-center"
-          style={{ fontWeight: 300 }}
-        >
-          {club.name}
-        </h1>
+        {club.titleFirst ? (
+          <>
+            <h1
+              className="font-display text-2xl md:text-5xl tracking-[0.04em] text-foreground text-center mb-1 md:mb-2"
+              style={{ fontWeight: 300 }}
+            >
+              {club.name}
+            </h1>
+            <p className="font-body text-[8px] md:text-[10px] tracking-[0.3em] text-muted-foreground">
+              {club.subtitle}
+            </p>
+          </>
+        ) : (
+          <>
+            <p className="font-body text-[8px] md:text-[10px] tracking-[0.3em] text-muted-foreground mb-1 md:mb-2">
+              {club.subtitle}
+            </p>
+            <h1
+              className="font-display text-2xl md:text-5xl tracking-[0.04em] text-foreground text-center"
+              style={{ fontWeight: 300 }}
+            >
+              {club.name}
+            </h1>
+          </>
+        )}
       </header>
 
       <section className="px-4 md:px-8 pb-12 md:pb-24">
@@ -146,14 +191,24 @@ const ClubDetail = () => {
           >
             <X size={22} />
           </button>
-          <video
-            src={activeClip.src}
-            className="max-h-[90vh] max-w-[90vw]"
-            autoPlay
-            controls
-            playsInline
-            onClick={(e) => e.stopPropagation()}
-          />
+          {activeClip.link ? (
+            <iframe
+              src={activeClip.link}
+              className="w-[90vw] h-[90vh] max-w-[500px] border-0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              onClick={(e) => e.stopPropagation()}
+            />
+          ) : (
+            <video
+              src={activeClip.src}
+              className="max-h-[90vh] max-w-[90vw]"
+              autoPlay
+              controls
+              playsInline
+              onClick={(e) => e.stopPropagation()}
+            />
+          )}
         </div>
       )}
     </div>
