@@ -5,9 +5,9 @@ import CustomCursor from "@/components/CustomCursor";
 
 interface Clip {
   id: number;
-  src?: string;
-  streamUrl?: string;
+  src: string;
   title: string;
+  link?: string;
 }
 
 interface Artist {
@@ -31,10 +31,10 @@ const artists: Record<string, Artist> = {
       { id: 8, src: "/mahmutorhan/8-astana.mp4", title: "8 ASTANA" },
       { id: 9, src: "/mahmutorhan/8-t.mp4", title: "8 T" },
       { id: 10, src: "/mahmutorhan/12.mp4", title: "12" },
-      { id: 11, streamUrl: "https://player.mediadelivery.net/play/626251/4b7ebb2e-7c03-41c0-9386-8d43b18abf3e", title: "REEL 7" },
-      { id: 12, streamUrl: "https://player.mediadelivery.net/play/626251/881a4ecc-7749-4f2a-a89e-c57239b3bef5", title: "REEL 13" },
-      { id: 13, streamUrl: "https://player.mediadelivery.net/play/626251/dc7caad2-dae0-433f-a581-a7cd7f33a069", title: "REEL 23" },
-      { id: 14, streamUrl: "https://player.mediadelivery.net/play/626251/ac8b1b62-9541-4f11-b896-016dbd0bdd18", title: "REEL 26" },
+      { id: 11, src: "/mahmutorhan/reel-7.mp4", title: "REEL 7", link: "https://player.mediadelivery.net/play/626251/4b7ebb2e-7c03-41c0-9386-8d43b18abf3e" },
+      { id: 12, src: "/mahmutorhan/reel-13.mp4", title: "REEL 13", link: "https://player.mediadelivery.net/play/626251/881a4ecc-7749-4f2a-a89e-c57239b3bef5" },
+      { id: 13, src: "/mahmutorhan/reel-23.mp4", title: "REEL 23", link: "https://player.mediadelivery.net/play/626251/dc7caad2-dae0-433f-a581-a7cd7f33a069" },
+      { id: 14, src: "/mahmutorhan/reel-26.mp4", title: "REEL 26", link: "https://player.mediadelivery.net/play/626251/ac8b1b62-9541-4f11-b896-016dbd0bdd18" },
     ],
   },
   "francis-mercier": {
@@ -79,6 +79,7 @@ const ArtistDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const [loaded, setLoaded] = useState(false);
   const [activeId, setActiveId] = useState<number | null>(null);
+  const [activeEmbedId, setActiveEmbedId] = useState<number | null>(null);
   const artist = slug ? artists[slug] : null;
 
   useEffect(() => {
@@ -142,7 +143,13 @@ const ArtistDetail = () => {
       <section className="px-4 md:px-8 pb-12 md:pb-24">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {artist.clips.map((clip) => (
-            <ClipCard key={clip.id} clip={clip} onOpen={() => setActiveId(clip.id)} />
+            <ClipCard
+              key={clip.id}
+              clip={clip}
+              onOpenModal={() => setActiveId(clip.id)}
+              activeEmbedId={activeEmbedId}
+              setActiveEmbedId={setActiveEmbedId}
+            />
           ))}
         </div>
       </section>
@@ -159,73 +166,61 @@ const ArtistDetail = () => {
           >
             <X size={22} />
           </button>
-          {activeClip.streamUrl ? (
-            <iframe
-              src={`${activeClip.streamUrl}?autoplay=true`}
-              className="max-h-[90vh] max-w-[90vw] w-[360px] md:w-[420px]"
-              style={{ aspectRatio: "9 / 16", border: "none" }}
-              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-              allowFullScreen
-              onClick={(e) => e.stopPropagation()}
-            />
-          ) : (
-            <video
-              src={activeClip.src}
-              className="max-h-[90vh] max-w-[90vw]"
-              style={{ aspectRatio: "9 / 16" }}
-              autoPlay
-              controls
-              playsInline
-              onClick={(e) => e.stopPropagation()}
-            />
-          )}
+          <video
+            src={activeClip.src}
+            className="max-h-[90vh] max-w-[90vw]"
+            style={{ aspectRatio: "9 / 16" }}
+            autoPlay
+            controls
+            playsInline
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
       )}
     </div>
   );
 };
 
-const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
+const ClipCard = ({
+  clip,
+  onOpenModal,
+  activeEmbedId,
+  setActiveEmbedId,
+}: {
+  clip: Clip;
+  onOpenModal: () => void;
+  activeEmbedId: number | null;
+  setActiveEmbedId: (id: number | null) => void;
+}) => {
   const [hovered, setHovered] = useState(false);
+  const showEmbed = clip.link && activeEmbedId === clip.id;
 
-  if (clip.streamUrl) {
-    const previewSrc = `${clip.streamUrl}?autoplay=true&loop=true&muted=true&preload=true&controls=false`;
+  const handleClick = () => {
+    if (clip.link) {
+      setHovered(false);
+      setActiveEmbedId(clip.id);
+    } else {
+      onOpenModal();
+    }
+  };
+
+  if (showEmbed) {
     return (
-      <div
-        data-cursor="expand"
-        onClick={onOpen}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="relative overflow-hidden aspect-[9/16] cursor-pointer bg-muted"
-      >
+      <div className="relative overflow-hidden aspect-[9/16]">
         <iframe
-          src={previewSrc}
-          className="absolute inset-0 w-full h-full pointer-events-none transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-          style={{ border: "none", transform: hovered ? "scale(1.03)" : "scale(1)" }}
+          src={clip.link}
+          className="absolute inset-0 w-full h-full border-0 z-10"
           allow="autoplay; encrypted-media"
-          tabIndex={-1}
+          allowFullScreen
+          style={{ cursor: "default" }}
         />
-        <div
-          className={`absolute inset-0 bg-background/40 pointer-events-none transition-opacity duration-500 ${
-            hovered ? "opacity-100" : "opacity-0"
-          }`}
-        />
-        <div
-          className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-500 ${
-            hovered ? "opacity-100" : "opacity-0"
-          }`}
+        <button
+          onClick={() => setActiveEmbedId(null)}
+          className="absolute top-2 right-2 z-20 bg-background/70 rounded-full p-1 text-muted-foreground hover:text-foreground transition-colors"
+          style={{ cursor: "pointer" }}
         >
-          <Play size={32} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
-        </div>
-        <div className="absolute inset-0 flex items-end p-4 z-10 pointer-events-none">
-          <p
-            className={`font-body text-[10px] tracking-[0.3em] text-foreground transition-all duration-500 ${
-              hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-            }`}
-          >
-            {clip.title}
-          </p>
-        </div>
+          <X size={16} />
+        </button>
       </div>
     );
   }
@@ -233,7 +228,7 @@ const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
   return (
     <div
       data-cursor="expand"
-      onClick={onOpen}
+      onClick={handleClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative overflow-hidden aspect-[9/16] cursor-pointer"
