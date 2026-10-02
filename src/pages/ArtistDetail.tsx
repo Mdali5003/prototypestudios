@@ -30,6 +30,10 @@ const artists: Record<string, Artist> = {
       { id: 8, src: "/mahmutorhan/8-astana.mp4", title: "8 ASTANA" },
       { id: 9, src: "/mahmutorhan/8-t.mp4", title: "8 T" },
       { id: 10, src: "/mahmutorhan/12.mp4", title: "12" },
+      { id: 11, src: "/mahmutorhan/reel-7.mp4", title: "REEL 7" },
+      { id: 12, src: "/mahmutorhan/reel-13.mp4", title: "REEL 13" },
+      { id: 13, src: "/mahmutorhan/reel-23.mp4", title: "REEL 23" },
+      { id: 14, src: "/mahmutorhan/reel-26.mp4", title: "REEL 26" },
     ],
   },
   "francis-mercier": {
