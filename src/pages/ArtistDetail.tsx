@@ -161,7 +161,7 @@ const ArtistDetail = () => {
           </button>
           {activeClip.streamUrl ? (
             <iframe
-              src={activeClip.streamUrl}
+              src={`${activeClip.streamUrl}?autoplay=true`}
               className="max-h-[90vh] max-w-[90vw] w-[360px] md:w-[420px]"
               style={{ aspectRatio: "9 / 16", border: "none" }}
               allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
@@ -189,6 +189,7 @@ const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
   const [hovered, setHovered] = useState(false);
 
   if (clip.streamUrl) {
+    const previewSrc = `${clip.streamUrl}?autoplay=true&loop=true&muted=true&preload=true&controls=false`;
     return (
       <div
         data-cursor="expand"
@@ -197,16 +198,23 @@ const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
         onMouseLeave={() => setHovered(false)}
         className="relative overflow-hidden aspect-[9/16] cursor-pointer bg-muted"
       >
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-muted to-background transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-          style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
+        <iframe
+          src={previewSrc}
+          className="absolute inset-0 w-full h-full pointer-events-none transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+          style={{ border: "none", transform: hovered ? "scale(1.03)" : "scale(1)" }}
+          allow="autoplay; encrypted-media"
+          tabIndex={-1}
         />
         <div
           className={`absolute inset-0 bg-background/40 pointer-events-none transition-opacity duration-500 ${
             hovered ? "opacity-100" : "opacity-0"
           }`}
         />
-        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        <div
+          className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-500 ${
+            hovered ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <Play size={32} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
         </div>
         <div className="absolute inset-0 flex items-end p-4 z-10 pointer-events-none">
