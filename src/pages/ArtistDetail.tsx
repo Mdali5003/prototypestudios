@@ -159,15 +159,26 @@ const ArtistDetail = () => {
           >
             <X size={22} />
           </button>
-          <video
-            src={activeClip.src}
-            className="max-h-[90vh] max-w-[90vw]"
-            style={{ aspectRatio: "9 / 16" }}
-            autoPlay
-            controls
-            playsInline
-            onClick={(e) => e.stopPropagation()}
-          />
+          {activeClip.streamUrl ? (
+            <iframe
+              src={activeClip.streamUrl}
+              className="max-h-[90vh] max-w-[90vw] w-[360px] md:w-[420px]"
+              style={{ aspectRatio: "9 / 16", border: "none" }}
+              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allowFullScreen
+              onClick={(e) => e.stopPropagation()}
+            />
+          ) : (
+            <video
+              src={activeClip.src}
+              className="max-h-[90vh] max-w-[90vw]"
+              style={{ aspectRatio: "9 / 16" }}
+              autoPlay
+              controls
+              playsInline
+              onClick={(e) => e.stopPropagation()}
+            />
+          )}
         </div>
       )}
     </div>
@@ -179,14 +190,12 @@ const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
 
   if (clip.streamUrl) {
     return (
-      <a
-        href={clip.streamUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+      <div
         data-cursor="expand"
+        onClick={onOpen}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative overflow-hidden aspect-[9/16] cursor-pointer block bg-muted"
+        className="relative overflow-hidden aspect-[9/16] cursor-pointer bg-muted"
       >
         <div
           className="absolute inset-0 bg-gradient-to-b from-muted to-background transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -209,7 +218,7 @@ const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
             {clip.title}
           </p>
         </div>
-      </a>
+      </div>
     );
   }
 
