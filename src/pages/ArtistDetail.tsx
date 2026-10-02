@@ -5,7 +5,8 @@ import CustomCursor from "@/components/CustomCursor";
 
 interface Clip {
   id: number;
-  src: string;
+  src?: string;
+  streamUrl?: string;
   title: string;
 }
 
@@ -30,10 +31,10 @@ const artists: Record<string, Artist> = {
       { id: 8, src: "/mahmutorhan/8-astana.mp4", title: "8 ASTANA" },
       { id: 9, src: "/mahmutorhan/8-t.mp4", title: "8 T" },
       { id: 10, src: "/mahmutorhan/12.mp4", title: "12" },
-      { id: 11, src: "/mahmutorhan/reel-7.mp4", title: "REEL 7" },
-      { id: 12, src: "/mahmutorhan/reel-13.mp4", title: "REEL 13" },
-      { id: 13, src: "/mahmutorhan/reel-23.mp4", title: "REEL 23" },
-      { id: 14, src: "/mahmutorhan/reel-26.mp4", title: "REEL 26" },
+      { id: 11, streamUrl: "https://player.mediadelivery.net/play/626251/4b7ebb2e-7c03-41c0-9386-8d43b18abf3e", title: "REEL 7" },
+      { id: 12, streamUrl: "https://player.mediadelivery.net/play/626251/881a4ecc-7749-4f2a-a89e-c57239b3bef5", title: "REEL 13" },
+      { id: 13, streamUrl: "https://player.mediadelivery.net/play/626251/dc7caad2-dae0-433f-a581-a7cd7f33a069", title: "REEL 23" },
+      { id: 14, streamUrl: "https://player.mediadelivery.net/play/626251/ac8b1b62-9541-4f11-b896-016dbd0bdd18", title: "REEL 26" },
     ],
   },
   "francis-mercier": {
@@ -175,6 +176,42 @@ const ArtistDetail = () => {
 
 const ClipCard = ({ clip, onOpen }: { clip: Clip; onOpen: () => void }) => {
   const [hovered, setHovered] = useState(false);
+
+  if (clip.streamUrl) {
+    return (
+      <a
+        href={clip.streamUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cursor="expand"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className="relative overflow-hidden aspect-[9/16] cursor-pointer block bg-muted"
+      >
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-muted to-background transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+          style={{ transform: hovered ? "scale(1.03)" : "scale(1)" }}
+        />
+        <div
+          className={`absolute inset-0 bg-background/40 pointer-events-none transition-opacity duration-500 ${
+            hovered ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+          <Play size={32} className="text-foreground fill-foreground/80" strokeWidth={1.5} />
+        </div>
+        <div className="absolute inset-0 flex items-end p-4 z-10 pointer-events-none">
+          <p
+            className={`font-body text-[10px] tracking-[0.3em] text-foreground transition-all duration-500 ${
+              hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+            }`}
+          >
+            {clip.title}
+          </p>
+        </div>
+      </a>
+    );
+  }
 
   return (
     <div
