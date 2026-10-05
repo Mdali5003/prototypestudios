@@ -21,20 +21,16 @@ const artists: Record<string, Artist> = {
     name: "MAHMUT ORHAN",
     subtitle: "CENTRAL ASIA TOUR",
     clips: [
-      { id: 1, src: "/mahmutorhan/1-u.mp4", title: "1 U" },
-      { id: 2, src: "/mahmutorhan/2.mp4", title: "2" },
-      { id: 3, src: "/mahmutorhan/2-tash.mp4", title: "2 TASH" },
-      { id: 4, src: "/mahmutorhan/4.mp4", title: "4" },
-      { id: 5, src: "/mahmutorhan/4-a.mp4", title: "4 A" },
-      { id: 6, src: "/mahmutorhan/4-t.mp4", title: "4 T" },
-      { id: 7, src: "/mahmutorhan/4-tash.mp4", title: "4 TASH" },
-      { id: 8, src: "/mahmutorhan/8-astana.mp4", title: "8 ASTANA" },
-      { id: 9, src: "/mahmutorhan/8-t.mp4", title: "8 T" },
-      { id: 10, src: "/mahmutorhan/12.mp4", title: "12" },
-      { id: 11, src: "/mahmutorhan/reel-7.mp4", title: "REEL 7", link: "https://player.mediadelivery.net/play/626251/4b7ebb2e-7c03-41c0-9386-8d43b18abf3e" },
-      { id: 12, src: "/mahmutorhan/reel-13.mp4", title: "REEL 13", link: "https://player.mediadelivery.net/play/626251/881a4ecc-7749-4f2a-a89e-c57239b3bef5" },
-      { id: 13, src: "/mahmutorhan/reel-23.mp4", title: "REEL 23", link: "https://player.mediadelivery.net/play/626251/dc7caad2-dae0-433f-a581-a7cd7f33a069" },
-      { id: 14, src: "/mahmutorhan/reel-26.mp4", title: "REEL 26", link: "https://player.mediadelivery.net/play/626251/ac8b1b62-9541-4f11-b896-016dbd0bdd18" },
+      { id: 1, src: "/mahmutorhan/mahmut-1.mp4", title: "MAHMUT ORHAN 1", link: "https://player.mediadelivery.net/play/626251/3718af8b-3bdb-4325-854e-d8375cd7a0c1" },
+      { id: 2, src: "/mahmutorhan/mahmut-2.mp4", title: "MAHMUT ORHAN 2", link: "https://player.mediadelivery.net/play/626251/8d4a482c-1dfa-4994-b8cf-024b167ede30" },
+      { id: 3, src: "/mahmutorhan/mahmut-3.mp4", title: "MAHMUT ORHAN 3", link: "https://player.mediadelivery.net/play/626251/5f3e116e-812b-4168-a22d-e9f43eeaaacd" },
+      { id: 4, src: "/mahmutorhan/mahmut-4.mp4", title: "MAHMUT ORHAN 4", link: "https://player.mediadelivery.net/play/626251/557a4fc9-290b-4759-aa07-c06986a25bcd" },
+      { id: 5, src: "/mahmutorhan/mahmut-5.mp4", title: "MAHMUT ORHAN 5", link: "https://player.mediadelivery.net/play/626251/b2944fe6-6a8a-4c19-9625-7c52d15c03f4" },
+      { id: 6, src: "/mahmutorhan/mahmut-6.mp4", title: "MAHMUT ORHAN 6", link: "https://player.mediadelivery.net/play/626251/058af243-2230-4f5f-aaca-e4a55d5e81d1" },
+      { id: 7, src: "/mahmutorhan/mahmut-7.mp4", title: "MAHMUT ORHAN 7", link: "https://player.mediadelivery.net/play/626251/274241f9-aac1-4d1b-954f-d20a74d3ce6a" },
+      { id: 8, src: "/mahmutorhan/mahmut-8.mp4", title: "MAHMUT ORHAN 8", link: "https://player.mediadelivery.net/play/626251/d594b406-b03d-48fb-aff7-6bc1c7a3ce89" },
+      { id: 9, src: "/mahmutorhan/mahmut-9.mp4", title: "MAHMUT ORHAN 9", link: "https://player.mediadelivery.net/play/626251/84a55271-f505-4c02-b687-83a9b79bd5c3" },
+      { id: 10, src: "/mahmutorhan/mahmut-10.mp4", title: "MAHMUT ORHAN 10", link: "https://player.mediadelivery.net/play/626251/da8f2729-e563-468d-87c1-aa8b786d23ba" },
     ],
   },
   "francis-mercier": {
@@ -71,6 +67,25 @@ const artists: Record<string, Artist> = {
       { id: 4, src: "/and-friends/and-friends-4.mp4", title: "&FRIENDS 4" },
       { id: 5, src: "/and-friends/and-friends-5.mp4", title: "&FRIENDS 5" },
       { id: 6, src: "/and-friends/and-friends-6.mp4", title: "&FRIENDS 6" },
+    ],
+  },
+  "hayden-james": {
+    name: "HAYDEN JAMES",
+    subtitle: "SAVAYA BALI",
+    clips: [
+      { id: 1, src: "/savaya/savaya-15.mp4", title: "HAYDEN JAMES 1", link: "https://player.mediadelivery.net/play/626251/581ce356-7f06-4244-b97f-b895e347524c" },
+      { id: 2, src: "/hayden-james/hayden-james-1.mp4", title: "HAYDEN JAMES 2", link: "https://player.mediadelivery.net/play/626251/c06835cd-5d5c-4ac4-aafa-b92dc8f59291" },
+      { id: 3, src: "/hayden-james/hayden-james-2.mp4", title: "HAYDEN JAMES 3", link: "https://player.mediadelivery.net/play/626251/e7995440-af10-41cd-a997-7e7bfdfb99a2" },
+      { id: 4, src: "/hayden-james/hayden-james-3.mp4", title: "HAYDEN JAMES 4", link: "https://player.mediadelivery.net/play/626251/eb12708b-2dc6-404c-93df-87480859b086" },
+    ],
+  },
+  moblack: {
+    name: "MOBLACK",
+    subtitle: "USHUAIA DUBAI HARBOUR",
+    clips: [
+      { id: 1, src: "/portfolio/sf-b3b-moblack.mp4", title: "MOBLACK 1", link: "https://player.mediadelivery.net/play/626251/82a1e26f-b954-4d40-bf67-0bdcec7e0013" },
+      { id: 2, src: "/moblack/moblack-1.mp4", title: "MOBLACK 2", link: "https://player.mediadelivery.net/play/626251/463b9b1c-5a94-4670-a3a4-9b2e6f136773" },
+      { id: 3, src: "/moblack/moblack-2.mp4", title: "MOBLACK 3", link: "https://player.mediadelivery.net/play/626251/69015552-726c-4a72-918c-41880526097b" },
     ],
   },
 };
@@ -115,7 +130,7 @@ const ArtistDetail = () => {
 
       <nav className="fixed top-0 left-0 right-0 z-50 px-8 md:px-12 h-20 flex items-center justify-between">
         <Link
-          to="/"
+          to="/work"
           className="flex items-center gap-3 font-body text-[11px] tracking-[0.3em] text-muted-foreground hover:text-foreground transition-colors duration-300"
         >
           BACK

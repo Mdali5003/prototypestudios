@@ -28,7 +28,7 @@ const projectData: Record<string, { title: string; subtitle: string; media: Medi
     ],
   },
   aftermovie: {
-    title: "AFTERMOVIES & CONCEPTS",
+    title: "AFTERMOVIES",
     subtitle: "EVENT RECAP",
     media: [
       { id: 1, src: "/portfolio/am-indeed-weekender.mp4", title: "INDEED WEEKENDER", type: "video", vertical: true, link: "https://player.mediadelivery.net/play/626251/2339673f-a91d-444a-9392-6c956a885823" },

@@ -9,6 +9,7 @@ import AdminPortal from "./pages/AdminPortal.tsx";
 import ArtistDetail from "./pages/ArtistDetail.tsx";
 import ClubDetail from "./pages/ClubDetail.tsx";
 import Awakenings from "./pages/Awakenings.tsx";
+import Work from "./pages/Work.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/work" element={<Work />} />
           <Route path="/work/:slug" element={<ProjectDetail />} />
           <Route path="/admin" element={<AdminPortal />} />
           <Route path="/artists/:slug" element={<ArtistDetail />} />

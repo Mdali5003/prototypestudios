@@ -115,7 +115,7 @@ const ClubDetail = () => {
 
       <nav className="fixed top-0 left-0 right-0 z-50 px-8 md:px-12 h-20 flex items-center justify-between">
         <Link
-          to="/"
+          to="/work"
           className="flex items-center gap-3 font-body text-[11px] tracking-[0.3em] text-muted-foreground hover:text-foreground transition-colors duration-300"
         >
           BACK

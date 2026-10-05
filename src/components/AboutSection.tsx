@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import francisImg from "/portfolio/photos/francis-10.jpg";
+import aboutImg from "/portfolio/photos/moblack-about.jpg";
 
 const stats = [
   { value: "300+", label: "EVENTS" },
@@ -29,7 +29,7 @@ const AboutSection = () => {
             revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <img src={francisImg} alt="Francis live performance" className="w-full h-full object-cover" />
+          <img src={aboutImg} alt="MOBLACK live at Ushuaia Dubai Harbour" className="w-full h-full object-cover" />
         </div>
 
         {/* Text */}
