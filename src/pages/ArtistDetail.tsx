@@ -31,6 +31,10 @@ const artists: Record<string, Artist> = {
       { id: 8, src: "/mahmutorhan/mahmut-8.mp4", title: "MAHMUT ORHAN 8", link: "https://player.mediadelivery.net/play/626251/d594b406-b03d-48fb-aff7-6bc1c7a3ce89" },
       { id: 9, src: "/mahmutorhan/mahmut-9.mp4", title: "MAHMUT ORHAN 9", link: "https://player.mediadelivery.net/play/626251/84a55271-f505-4c02-b687-83a9b79bd5c3" },
       { id: 10, src: "/mahmutorhan/mahmut-10.mp4", title: "MAHMUT ORHAN 10", link: "https://player.mediadelivery.net/play/626251/da8f2729-e563-468d-87c1-aa8b786d23ba" },
+      { id: 11, src: "/mahmutorhan/reel-7.mp4", title: "REEL 7", link: "https://player.mediadelivery.net/play/626251/4b7ebb2e-7c03-41c0-9386-8d43b18abf3e" },
+      { id: 12, src: "/mahmutorhan/reel-13.mp4", title: "REEL 13", link: "https://player.mediadelivery.net/play/626251/881a4ecc-7749-4f2a-a89e-c57239b3bef5" },
+      { id: 13, src: "/mahmutorhan/reel-23.mp4", title: "REEL 23", link: "https://player.mediadelivery.net/play/626251/dc7caad2-dae0-433f-a581-a7cd7f33a069" },
+      { id: 14, src: "/mahmutorhan/reel-26.mp4", title: "REEL 26", link: "https://player.mediadelivery.net/play/626251/ac8b1b62-9541-4f11-b896-016dbd0bdd18" },
     ],
   },
   "francis-mercier": {
