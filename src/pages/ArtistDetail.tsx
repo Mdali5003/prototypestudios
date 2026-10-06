@@ -78,9 +78,9 @@ const artists: Record<string, Artist> = {
     subtitle: "SAVAYA BALI",
     clips: [
       { id: 1, src: "/savaya/savaya-15.mp4", title: "HAYDEN JAMES 1", link: "https://player.mediadelivery.net/play/626251/581ce356-7f06-4244-b97f-b895e347524c" },
-      { id: 2, src: "/hayden-james/hayden-james-1.mp4", title: "HAYDEN JAMES 2", link: "https://player.mediadelivery.net/play/626251/c06835cd-5d5c-4ac4-aafa-b92dc8f59291" },
+      { id: 2, src: "/hayden-james/hayden-james-1.mp4", title: "HAYDEN JAMES 2", link: "https://player.mediadelivery.net/play/626251/eb12708b-2dc6-404c-93df-87480859b086" },
       { id: 3, src: "/hayden-james/hayden-james-2.mp4", title: "HAYDEN JAMES 3", link: "https://player.mediadelivery.net/play/626251/e7995440-af10-41cd-a997-7e7bfdfb99a2" },
-      { id: 4, src: "/hayden-james/hayden-james-3.mp4", title: "HAYDEN JAMES 4", link: "https://player.mediadelivery.net/play/626251/eb12708b-2dc6-404c-93df-87480859b086" },
+      { id: 4, src: "/hayden-james/hayden-james-3.mp4", title: "HAYDEN JAMES 4", link: "https://player.mediadelivery.net/play/626251/c06835cd-5d5c-4ac4-aafa-b92dc8f59291" },
     ],
   },
   moblack: {
