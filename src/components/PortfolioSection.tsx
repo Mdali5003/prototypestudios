@@ -11,9 +11,9 @@ interface Project {
 }
 
 const projects: Project[] = [
-  { id: 1, title: "SET RECORDING", subtitle: "FULL SET CAPTURE", slug: "set-recording", video: "/portfolio/set-recording.mp4" },
+  { id: 1, title: "SET RECORDING", subtitle: "FULL SET CAPTURE", slug: "set-recording", video: "/mahmutorhan/mahmut-3.mp4" },
   { id: 2, title: "SHORT FORM", subtitle: "SOCIAL CONTENT", slug: "short-form", video: "/portfolio/short-form.mp4" },
-  { id: 3, title: "AFTERMOVIES", subtitle: "EVENT RECAP", slug: "aftermovie", video: "/portfolio/am-indeed-weekender.mp4" },
+  { id: 3, title: "AFTERMOVIES", subtitle: "EVENT RECAP", slug: "aftermovie", video: "/portfolio/am-sexy-fish-2801.mp4" },
   { id: 4, title: "PHOTOS", subtitle: "EVENT PHOTOGRAPHY", slug: "photos", image: "/portfolio/photos/liva-k-preview.jpg" },
 ];
 
