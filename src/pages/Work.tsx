@@ -16,6 +16,15 @@ const artists: Card[] = [
   { slug: "and-friends", name: "&FRIENDS", subtitle: "SAVAYA BALI", photo: "/artists/and-friends.jpg" },
   { slug: "hayden-james", name: "HAYDEN JAMES", subtitle: "SAVAYA BALI", photo: "/artists/hayden-james.jpg" },
   { slug: "moblack", name: "MOBLACK", subtitle: "USHUAIA DUBAI HARBOUR", photo: "/artists/moblack.jpg" },
+  { slug: "armnhmr", name: "ARMNHMR", subtitle: "&FRIENDS FESTIVAL, MANILA", photo: "/artists/armnhmr.jpg" },
+  { slug: "itschyll", name: "ITSCHYLL", subtitle: "&FRIENDS FESTIVAL, MANILA", photo: "/artists/itschyll.jpg" },
+  { slug: "amelie-lens", name: "AMELIE LENS", subtitle: "SOHO GARDEN HIVE", photo: "/artists/amelie-lens.jpg" },
+  { slug: "i-hate-models", name: "I HATE MODELS", subtitle: "SOHO GARDEN HIVE", photo: "/artists/i-hate-models.jpg" },
+  { slug: "klangkuenstler", name: "KLANGKUENSTLER", subtitle: "SOHO GARDEN HIVE", photo: "/artists/klangkuenstler.jpg" },
+  { slug: "lost-frequencies", name: "LOST FREQUENCIES", subtitle: "BOHEMIA BY FIVE DUBAI", photo: "/artists/lost-frequencies.jpg" },
+  { slug: "honeyluv", name: "HONEYLUV", subtitle: "MINISTRY OF SOUND, DUBAI", photo: "/artists/honeyluv.jpg" },
+  { slug: "ignez", name: "IGNEZ", subtitle: "", photo: "/artists/ignez.jpg" },
+  { slug: "vidojean", name: "VIDOJEAN", subtitle: "INDIA TOUR", photo: "/artists/vidojean.jpg" },
 ];
 
 const venues: Card[] = [

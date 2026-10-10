@@ -102,7 +102,7 @@ const ContactSection = () => {
           }`}
         >
           <p className="font-body text-[11px] tracking-[0.2em] text-muted-foreground">
-            theprototypemedia@gmail.com
+            contact@prototypemedia.co
           </p>
           <p className="font-body text-[11px] tracking-[0.2em] text-muted-foreground">
             +971 509 325 501
