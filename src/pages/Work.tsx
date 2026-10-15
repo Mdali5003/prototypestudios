@@ -11,20 +11,22 @@ interface Card {
 
 const artists: Card[] = [
   { slug: "mahmut-orhan", name: "MAHMUT ORHAN", subtitle: "CENTRAL ASIA TOUR", photo: "/artists/mahmut-orhan.jpg" },
-  { slug: "francis-mercier", name: "FRANCIS MERCIER", subtitle: "SAVAYA BALI", photo: "/artists/francis-mercier.jpg" },
-  { slug: "aaron-sevilla", name: "AARON SEVILLA", subtitle: "SAVAYA BALI", photo: "/artists/aaron-sevilla.jpg" },
-  { slug: "and-friends", name: "&FRIENDS", subtitle: "SAVAYA BALI", photo: "/artists/and-friends.jpg" },
-  { slug: "hayden-james", name: "HAYDEN JAMES", subtitle: "SAVAYA BALI", photo: "/artists/hayden-james.jpg" },
-  { slug: "moblack", name: "MOBLACK", subtitle: "USHUAIA DUBAI HARBOUR", photo: "/artists/moblack.jpg" },
-  { slug: "armnhmr", name: "ARMNHMR", subtitle: "&FRIENDS FESTIVAL, MANILA", photo: "/artists/armnhmr.jpg" },
-  { slug: "itschyll", name: "ITSCHYLL", subtitle: "&FRIENDS FESTIVAL, MANILA", photo: "/artists/itschyll.jpg" },
   { slug: "amelie-lens", name: "AMELIE LENS", subtitle: "SOHO GARDEN HIVE", photo: "/artists/amelie-lens.jpg" },
+  { slug: "carl-cox", name: "CARL COX", subtitle: "PACHA ICONS DUBAI", photo: "/artists/carl-cox.jpg" },
+  { slug: "robin-schulz", name: "ROBIN SCHULZ", subtitle: "BOHEMIA BY FIVE DUBAI", photo: "/artists/robin-schulz.jpg" },
+  { slug: "lost-frequencies", name: "LOST FREQUENCIES", subtitle: "BOHEMIA BY FIVE DUBAI", photo: "/artists/lost-frequencies.jpg" },
   { slug: "i-hate-models", name: "I HATE MODELS", subtitle: "SOHO GARDEN HIVE", photo: "/artists/i-hate-models.jpg" },
   { slug: "klangkuenstler", name: "KLANGKUENSTLER", subtitle: "SOHO GARDEN HIVE", photo: "/artists/klangkuenstler.jpg" },
-  { slug: "lost-frequencies", name: "LOST FREQUENCIES", subtitle: "BOHEMIA BY FIVE DUBAI", photo: "/artists/lost-frequencies.jpg" },
+  { slug: "aaron-sevilla", name: "AARON SEVILLA", subtitle: "SAVAYA BALI", photo: "/artists/aaron-sevilla.jpg" },
+  { slug: "francis-mercier", name: "FRANCIS MERCIER", subtitle: "SAVAYA BALI", photo: "/artists/francis-mercier.jpg" },
+  { slug: "itschyll", name: "ITSCHYLL", subtitle: "&FRIENDS FESTIVAL, MANILA", photo: "/artists/itschyll.jpg" },
+  { slug: "moblack", name: "MOBLACK", subtitle: "USHUAIA DUBAI HARBOUR", photo: "/artists/moblack.jpg" },
   { slug: "honeyluv", name: "HONEYLUV", subtitle: "MINISTRY OF SOUND, DUBAI", photo: "/artists/honeyluv.jpg" },
-  { slug: "ignez", name: "IGNEZ", subtitle: "", photo: "/artists/ignez.jpg" },
+  { slug: "armnhmr", name: "ARMNHMR", subtitle: "&FRIENDS FESTIVAL, MANILA", photo: "/artists/armnhmr.jpg" },
+  { slug: "and-friends", name: "&FRIENDS", subtitle: "SAVAYA BALI", photo: "/artists/and-friends.jpg" },
   { slug: "vidojean", name: "VIDOJEAN", subtitle: "INDIA TOUR", photo: "/artists/vidojean.jpg" },
+  { slug: "hayden-james", name: "HAYDEN JAMES", subtitle: "SAVAYA BALI", photo: "/artists/hayden-james.jpg" },
+  { slug: "ignez", name: "IGNEZ", subtitle: "", photo: "/artists/ignez.jpg" },
 ];
 
 const venues: Card[] = [

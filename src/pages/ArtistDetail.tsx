@@ -236,6 +236,35 @@ const artists: Record<string, Artist> = {
       { id: 11, src: "/vidojean/vidojean-11.mp4", title: "VIDOJEAN 11", link: "https://player.mediadelivery.net/play/626251/4b3ad9e9-49ef-4bb4-9b9c-66f3721716b7" },
     ],
   },
+  "robin-schulz": {
+    name: "ROBIN SCHULZ",
+    subtitle: "BOHEMIA BY FIVE DUBAI",
+    clips: [
+      { id: 1, src: "/robin-schulz/robin-schulz-1.mp4", title: "ROBIN SCHULZ 1", link: "https://player.mediadelivery.net/play/626251/046f8943-90fc-4748-837e-384eac7cce14" },
+      { id: 2, src: "/robin-schulz/robin-schulz-2.mp4", title: "ROBIN SCHULZ 2", link: "https://player.mediadelivery.net/play/626251/e817740e-9cfb-43c3-b8c7-8a58fe9f13df" },
+      { id: 3, src: "/robin-schulz/robin-schulz-6.mp4", title: "ROBIN SCHULZ 3", link: "https://player.mediadelivery.net/play/626251/39766dba-6e22-4d69-a85f-651ad4b49dee" },
+      { id: 4, src: "/robin-schulz/robin-schulz-7.mp4", title: "ROBIN SCHULZ 4", link: "https://player.mediadelivery.net/play/626251/6e39fb47-c11b-491c-b976-c83c859c03ba" },
+      { id: 5, src: "/robin-schulz/robin-schulz-9.mp4", title: "ROBIN SCHULZ 5", link: "https://player.mediadelivery.net/play/626251/d25f088d-4da8-4261-8929-d7bb1c901ce9" },
+      { id: 6, src: "/robin-schulz/robin-schulz-10.mp4", title: "ROBIN SCHULZ 6", link: "https://player.mediadelivery.net/play/626251/182e5374-0616-403c-b3ef-7ab1f7a23fea" },
+      { id: 7, src: "/robin-schulz/robin-schulz-11.mp4", title: "ROBIN SCHULZ 7", link: "https://player.mediadelivery.net/play/626251/72b1095b-bd02-46a7-b48b-eddf4fedf5bc" },
+      { id: 8, src: "/robin-schulz/robin-schulz-14.mp4", title: "ROBIN SCHULZ 8", link: "https://player.mediadelivery.net/play/626251/2070db35-1a76-4d56-9632-aeec8619d2ae" },
+      { id: 9, src: "/robin-schulz/robin-schulz-15.mp4", title: "ROBIN SCHULZ 9", link: "https://player.mediadelivery.net/play/626251/37482d05-0b45-4a72-8d0d-d886d39ed6da" },
+    ],
+  },
+  "carl-cox": {
+    name: "CARL COX",
+    subtitle: "PACHA ICONS DUBAI",
+    clips: [
+      { id: 1, src: "/carl-cox/carl-cox-1.mp4", title: "CARL COX 1", link: "https://player.mediadelivery.net/play/626251/6f31517a-b0a4-49d7-94e3-517c307017a0" },
+      { id: 2, src: "/carl-cox/carl-cox-2.mp4", title: "CARL COX 2", link: "https://player.mediadelivery.net/play/626251/a89ea7ce-07dd-4323-ab45-95dd7305d4f2" },
+      { id: 3, src: "/carl-cox/carl-cox-5.mp4", title: "CARL COX 3", link: "https://player.mediadelivery.net/play/626251/e2d2dc69-b55f-403f-9c94-bb87689dd23e" },
+      { id: 4, src: "/carl-cox/carl-cox-7.mp4", title: "CARL COX 4", link: "https://player.mediadelivery.net/play/626251/0c48a53f-1556-4526-bb63-e4767456c5e3" },
+      { id: 5, src: "/carl-cox/carl-cox-9.mp4", title: "CARL COX 5", link: "https://player.mediadelivery.net/play/626251/090eb790-bd52-44db-82e1-201e8074ede5" },
+      { id: 6, src: "/carl-cox/carl-cox-12.mp4", title: "CARL COX 6", link: "https://player.mediadelivery.net/play/626251/f962dc2e-6e47-489c-aa44-c16452a05f05" },
+      { id: 7, src: "/carl-cox/carl-cox-13.mp4", title: "CARL COX 7", link: "https://player.mediadelivery.net/play/626251/b0103044-1fd6-4f5e-88ce-918ad6b9eabd" },
+      { id: 8, src: "/carl-cox/carl-cox-15.mp4", title: "CARL COX 8", link: "https://player.mediadelivery.net/play/626251/075bdc74-3bd9-416d-8055-4123579c4944" },
+    ],
+  },
 };
 
 const ArtistDetail = () => {
