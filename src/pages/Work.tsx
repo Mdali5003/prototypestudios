@@ -33,6 +33,9 @@ const venues: Card[] = [
   { slug: "ushuaia-dubai-harbour", name: "USHUAIA", subtitle: "DUBAI HARBOUR", photo: "/venues/ushuaia-dubai-harbour.jpg" },
   { slug: "savaya", name: "SAVAYA", subtitle: "BALI", photo: "/venues/savaya.jpg" },
   { slug: "atlassuperclub", name: "ATLAS SUPER CLUB", subtitle: "BALI", photo: "/venues/atlassuperclub.jpg" },
+  { slug: "soho-garden", name: "SOHO GARDEN", subtitle: "DUBAI", photo: "/venues/soho-garden.jpg" },
+  { slug: "pacha-icons-dubai", name: "PACHA ICONS", subtitle: "DUBAI", photo: "/venues/pacha-icons-dubai.jpg" },
+  { slug: "bohemia-by-five-dubai", name: "BOHEMIA BY FIVE", subtitle: "DUBAI", photo: "/venues/bohemia-by-five-dubai.jpg" },
 ];
 
 const Work = () => {

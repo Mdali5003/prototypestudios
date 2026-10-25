@@ -7,22 +7,33 @@ interface Logo {
   link?: string;
 }
 
+// Ordered by verified Instagram follower count (highest to lowest), checked 2026-10-25.
+// Re-verify before reordering again — these move; past mistakes included trusting
+// guessed handles for the wrong account (e.g. a namesake with 31 followers instead
+// of the real artist), so always confirm the official account first.
 const logos: Logo[] = [
-  { src: "/logos/savaya.png", alt: "Savaya", link: "/clubs/savaya" },
-  { src: "/logos/ushuaia.png", alt: "Ushuaia Dubai", link: "/clubs/ushuaia-dubai-harbour" },
-  { src: "/logos/soho-garden.png", alt: "Soho Garden" },
-  { src: "/logos/surf-club-dubai.png", alt: "Surf Club Dubai" },
-  { src: "/logos/klangunstler.jpg", alt: "Klangkuenstler" },
-  { src: "/logos/amelie-lens.png", alt: "Amelie Lens" },
-  { src: "/logos/francis-mercier.png", alt: "Francis Mercier", link: "/artists/francis-mercier" },
-  { src: "/logos/mo-black.png", alt: "MoBlack" },
-  { src: "/logos/gioli-assia.png", alt: "Gioli & Assia" },
-  { src: "/logos/aaron-sevilla.png", alt: "Aaron Sevilla", link: "/artists/aaron-sevilla" },
-  { src: "/logos/i-hate-models.png", alt: "I Hate Models" },
-  { src: "/logos/shimza.webp", alt: "Shimza" },
-  { src: "/logos/mahmut-orhan.png", alt: "Mahmut Orhan", link: "/artists/mahmut-orhan" },
-  { src: "/logos/be-beach.png", alt: "Be Beach Dubai" },
-  { src: "/logos/atlas-super-club.png", alt: "Atlas Super Club", link: "/clubs/atlassuperclub" },
+  { src: "/logos/mahmut-orhan.png", alt: "Mahmut Orhan", link: "/artists/mahmut-orhan" }, // 3.0M
+  { src: "/logos/amelie-lens.png", alt: "Amelie Lens", link: "/artists/amelie-lens" }, // 2.8M
+  { src: "/logos/lost-frequencies.png", alt: "Lost Frequencies", link: "/artists/lost-frequencies" }, // 1.4M
+  { src: "/logos/shimza.webp", alt: "Shimza" }, // 1.3M
+  { src: "/logos/i-hate-models.png", alt: "I Hate Models", link: "/artists/i-hate-models" }, // 1.2M
+  { src: "/logos/klangunstler.jpg", alt: "Klangkuenstler", link: "/artists/klangkuenstler" }, // 927K
+  { src: "/logos/aaron-sevilla.png", alt: "Aaron Sevilla", link: "/artists/aaron-sevilla" }, // 881K
+  { src: "/logos/gioli-assia.png", alt: "Gioli & Assia" }, // 593K
+  { src: "/logos/savaya.png", alt: "Savaya", link: "/clubs/savaya" }, // 552K
+  { src: "/logos/francis-mercier.png", alt: "Francis Mercier", link: "/artists/francis-mercier" }, // 461K
+  { src: "/logos/soho-garden.png", alt: "Soho Garden", link: "/clubs/soho-garden" }, // 161K
+  { src: "/logos/surf-club-dubai.png", alt: "Surf Club Dubai" }, // 144K
+  { src: "/logos/mo-black.png", alt: "MoBlack", link: "/artists/moblack" }, // 139K
+  { src: "/logos/ushuaia.png", alt: "Ushuaia Dubai", link: "/clubs/ushuaia-dubai-harbour" }, // 135K
+  { src: "/logos/honeyluv.png", alt: "Honeyluv", link: "/artists/honeyluv" }, // 124K
+  { src: "/logos/armnhmr.png", alt: "ARMNHMR", link: "/artists/armnhmr" }, // 117K
+  { src: "/logos/be-beach.png", alt: "Be Beach Dubai" }, // 95.8K
+  { src: "/logos/vidojean.png", alt: "Vidojean", link: "/artists/vidojean" }, // 83.6K
+  { src: "/logos/hayden-james.png", alt: "Hayden James", link: "/artists/hayden-james" }, // 79.3K
+  { src: "/logos/ignez.png", alt: "Ignez", link: "/artists/ignez" }, // 74.9K
+  { src: "/logos/atlas-super-club.png", alt: "Atlas Super Club", link: "/clubs/atlassuperclub" }, // 66.2K
+  { src: "/logos/kvision.png", alt: "Kvision", link: "/artists/kvision" }, // 63.5K
 ];
 
 const SPEED = 60; // px per second
