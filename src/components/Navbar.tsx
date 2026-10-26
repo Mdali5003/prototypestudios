@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X } from "lucide-react";
+import { X, Instagram } from "lucide-react";
 
 const navLinks = [
   { label: "WORK", href: "/work" },
@@ -30,16 +30,8 @@ const Navbar = () => {
           visible && !scrolled ? "opacity-100" : !visible ? "opacity-0" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="w-full px-8 md:px-12 flex items-center justify-between h-20">
-          <a
-            href="#"
-            className="flex items-center gap-2 font-brand text-[15px] tracking-[0.2em] uppercase text-foreground" style={{ fontWeight: 500 }}
-          >
-            <img src="/logo.png" alt="Prototype Media logo" className="h-8 w-auto" />
-            PROTOTYPE MEDIA
-          </a>
-
-          {/* Desktop */}
+        <div className="relative w-full px-8 md:px-12 flex items-center justify-between h-20">
+          {/* Desktop nav links (left) */}
           <div className="hidden md:flex items-center gap-12">
             {navLinks.map((l) => (
               <a
@@ -52,10 +44,31 @@ const Navbar = () => {
             ))}
           </div>
 
+          {/* Centered logo + wordmark */}
+          <a
+            href="#"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 font-brand text-[15px] tracking-[0.2em] uppercase text-foreground"
+            style={{ fontWeight: 500 }}
+          >
+            <img src="/logo.png" alt="Prototype Media logo" className="h-8 w-auto" />
+            PROTOTYPE MEDIA
+          </a>
+
+          {/* Instagram (desktop, right) */}
+          <a
+            href="https://www.instagram.com/theprototype_media/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Prototype Media on Instagram"
+            className="hidden md:flex text-muted-foreground hover:text-foreground transition-colors duration-300"
+          >
+            <Instagram size={18} strokeWidth={1.5} />
+          </a>
+
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(true)}
-            className="md:hidden text-foreground p-2 active:scale-95 transition-transform"
+            className="md:hidden text-foreground p-2 active:scale-95 transition-transform ml-auto"
             aria-label="Open menu"
           >
             <div className="flex flex-col gap-1.5">
@@ -86,6 +99,16 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <a
+            href="https://www.instagram.com/theprototype_media/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Prototype Media on Instagram"
+            className="text-foreground hover:text-muted-foreground transition-colors mt-2"
+          >
+            <Instagram size={22} strokeWidth={1.5} />
+          </a>
         </div>
       )}
     </>

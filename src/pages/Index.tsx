@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import LogoTicker from "@/components/LogoTicker";
-import PortfolioSection from "@/components/PortfolioSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
@@ -28,7 +27,6 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <LogoTicker />
-      <PortfolioSection />
       <ServicesSection />
       <AboutSection />
       <ContactSection />
