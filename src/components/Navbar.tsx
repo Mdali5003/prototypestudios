@@ -47,11 +47,11 @@ const Navbar = () => {
           {/* Centered logo + wordmark */}
           <a
             href="#"
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 md:gap-2 font-brand text-[10px] sm:text-[12px] md:text-[15px] tracking-[0.12em] md:tracking-[0.2em] uppercase text-foreground whitespace-nowrap"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 md:gap-2 font-brand text-[12px] md:text-[15px] tracking-[0.12em] md:tracking-[0.2em] uppercase text-foreground whitespace-nowrap"
             style={{ fontWeight: 500 }}
           >
-            <img src="/logo.png" alt="Prototype Media logo" className="h-6 md:h-8 w-auto shrink-0" />
-            PROTOTYPE MEDIA
+            <img src="/logo.png" alt="Prototype Media logo" className="h-7 md:h-8 w-auto shrink-0" />
+            <span className="hidden sm:inline">PROTOTYPE MEDIA</span>
           </a>
 
           {/* Instagram (desktop, right) */}
