@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CustomCursor from "@/components/CustomCursor";
+import { useSEO } from "@/hooks/useSEO";
 
 interface Card {
   slug: string;
@@ -40,6 +41,13 @@ const venues: Card[] = [
 
 const Work = () => {
   const [loaded, setLoaded] = useState(false);
+
+  useSEO({
+    title: "Our Work — Multicam Coverage & Venues",
+    description:
+      "Multicam coverage for Mahmut Orhan, Carl Cox, Amelie Lens and more, at venues including Ushuaia Dubai Harbour, Savaya Bali, and Pacha Icons Dubai. Browse the full portfolio.",
+    path: "/work",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
