@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Play, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import CustomCursor from "@/components/CustomCursor";
+import { useSEO } from "@/hooks/useSEO";
 
 interface Clip {
   id: number;
@@ -154,6 +155,16 @@ const ClubDetail = () => {
   const [loaded, setLoaded] = useState(false);
   const [activeId, setActiveId] = useState<number | null>(null);
   const club = slug ? clubs[slug] : null;
+
+  useSEO({
+    title: club ? `${club.name}${club.subtitle ? `, ${club.subtitle}` : ""} — Multicam Coverage` : "Venue",
+    description: club
+      ? `Multicam video coverage at ${club.name}${club.subtitle ? `, ${club.subtitle}` : ""}, shot and edited by Prototype Media.`
+      : "Venue coverage by Prototype Media.",
+    image: slug ? `https://www.prototypemedia.co/venues/${slug}.jpg` : undefined,
+    path: slug ? `/clubs/${slug}` : "/clubs",
+    noindex: !club,
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
