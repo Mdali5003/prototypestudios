@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Play, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import CustomCursor from "@/components/CustomCursor";
+import { useSEO } from "@/hooks/useSEO";
 
 interface Clip {
   id: number;
@@ -273,6 +274,16 @@ const ArtistDetail = () => {
   const [activeId, setActiveId] = useState<number | null>(null);
   const [activeEmbedId, setActiveEmbedId] = useState<number | null>(null);
   const artist = slug ? artists[slug] : null;
+
+  useSEO({
+    title: artist ? `${artist.name} — Multicam Coverage${artist.subtitle ? ` at ${artist.subtitle}` : ""}` : "Artist",
+    description: artist
+      ? `Multicam video coverage of ${artist.name}${artist.subtitle ? ` at ${artist.subtitle}` : ""}, shot and edited by Prototype Media.`
+      : "Artist coverage by Prototype Media.",
+    image: slug ? `https://www.prototypemedia.co/artists/${slug}.jpg` : undefined,
+    path: slug ? `/artists/${slug}` : "/artists",
+    noindex: !artist,
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
