@@ -39,8 +39,9 @@ const AdminPortal = () => {
         </div>
 
         <p className="font-body text-[11px] tracking-[0.15em] text-muted-foreground/70 leading-relaxed border border-[hsl(0,0%,12%)] p-4 mb-10">
-          LOCAL PREVIEW ONLY — RESPONSES ARE SAVED IN THIS BROWSER AND ARE NOT SENT ANYWHERE.
-          FORMS SUBMITTED BY VISITORS ON OTHER DEVICES WILL NOT APPEAR HERE.
+          SUBMISSIONS NOW EMAIL TO CONTACT@PROTOTYPEMEDIA.CO VIA WEB3FORMS. THIS LIST IS A LOCAL
+          BACKUP COPY SAVED IN THIS BROWSER ONLY — FORMS SUBMITTED BY VISITORS ON OTHER DEVICES
+          WILL NOT APPEAR HERE, CHECK YOUR EMAIL FOR THOSE.
         </p>
 
 
