@@ -8,9 +8,17 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { useSEO } from "@/hooks/useSEO";
 
 const Index = () => {
   const [loaded, setLoaded] = useState(false);
+
+  useSEO({
+    title: "Prototype Media — Multicam & Content Production, Dubai",
+    description:
+      "Specialist multicam production studio for nightlife and events in Dubai. Multicam recordings, aftermovies, photography, and short-form content, delivered in under 8 hours.",
+    path: "/",
+  });
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
