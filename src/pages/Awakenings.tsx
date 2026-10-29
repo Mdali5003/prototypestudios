@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Play, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import CustomCursor from "@/components/CustomCursor";
+import { useSEO } from "@/hooks/useSEO";
 
 interface Clip {
   id: number;
@@ -21,6 +22,12 @@ const clips: Clip[] = [
 const Awakenings = () => {
   const [loaded, setLoaded] = useState(false);
   const [activeId, setActiveId] = useState<number | null>(null);
+
+  useSEO({
+    title: "Awakenings — Multicam Coverage",
+    description: "Multicam video coverage of Awakenings, one of the world's leading festival brands, shot and edited by Prototype Media.",
+    path: "/awakenings",
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
