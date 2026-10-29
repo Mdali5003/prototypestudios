@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { addSubmission } from "@/lib/formStore";
 
+// Web3Forms access key — public by design (client-side submission, rate-limited
+// and spam-filtered on their end), get/rotate yours at web3forms.com.
+const WEB3FORMS_ACCESS_KEY = "d1a3e28b-f18b-4ad2-81da-ae8c58619000";
+
 const ContactSection = () => {
   const [revealed, setRevealed] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const ref = useRef<HTMLDivElement>(null);
 
@@ -16,12 +20,35 @@ const ContactSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    addSubmission(formData);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setSubmitted(false), 3000);
+    setStatus("sending");
+    addSubmission(formData); // local backup copy, visible at /admin on this device
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New inquiry from ${formData.name} — prototypemedia.co`,
+          from_name: "Prototype Media website",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        setStatus("sent");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -81,18 +108,23 @@ const ContactSection = () => {
             />
           </div>
 
-          <div className="flex justify-center pt-4">
+          <div className="flex flex-col items-center gap-3 pt-4">
             <button
               type="submit"
-              disabled={submitted}
+              disabled={status === "sending" || status === "sent"}
               className={`font-body text-[11px] tracking-[0.25em] uppercase px-10 py-4 border transition-all duration-300 active:scale-[0.97] ${
-                submitted
+                status === "sent"
                   ? "border-foreground bg-foreground text-background"
                   : "border-[hsl(0,0%,30%)] text-foreground hover:bg-foreground hover:text-background"
               }`}
             >
-              {submitted ? "SENT ✓" : "SUBMIT"}
+              {status === "sending" ? "SENDING…" : status === "sent" ? "SENT ✓" : "GET A QUOTE"}
             </button>
+            {status === "error" && (
+              <p className="font-body text-[11px] tracking-[0.1em] text-red-400">
+                Something went wrong — email us directly at contact@prototypemedia.co
+              </p>
+            )}
           </div>
         </form>
 
