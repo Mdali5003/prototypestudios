@@ -1,14 +1,24 @@
 import { useState, useEffect } from "react";
 import { getSubmissions, FormSubmission } from "@/lib/formStore";
 import { useNavigate } from "react-router-dom";
+import { useSEO } from "@/hooks/useSEO";
 
-// NOTE: Submissions are stored in this browser's localStorage only. This page
-// renders data the visitor already owns, so there is nothing here to gate.
-// A client-side password check would be trivially bypassable and would give a
-// false sense of protection. Real access control requires a backend.
+// NOTE: Submissions now also email to contact@prototypemedia.co via Web3Forms
+// (see ContactSection.tsx). This localStorage copy is a same-device backup only
+// and is not the primary delivery path. This page renders data the visitor
+// already owns, so there is nothing here to gate. A client-side password check
+// would be trivially bypassable and would give a false sense of protection.
+// Real access control requires a backend.
 const AdminPortal = () => {
   const [submissions, setSubmissions] = useState<FormSubmission[]>([]);
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Admin",
+    description: "Internal admin view.",
+    path: "/admin",
+    noindex: true,
+  });
 
   useEffect(() => {
     setSubmissions(getSubmissions());
