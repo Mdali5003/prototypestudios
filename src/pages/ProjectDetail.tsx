@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Play, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import CustomCursor from "@/components/CustomCursor";
+import { useSEO } from "@/hooks/useSEO";
 import sfSadete from "@/assets/sf-sadete.mp4.asset.json";
 import sfIceIce from "@/assets/sf-ice-ice.mp4.asset.json";
 
@@ -91,6 +92,15 @@ const ProjectDetail = () => {
   const [loaded, setLoaded] = useState(false);
   const [activeVideoId, setActiveVideoId] = useState<number | null>(null);
   const project = slug ? projectData[slug] : null;
+
+  useSEO({
+    title: project ? `${project.title} — ${project.subtitle}` : "Work",
+    description: project
+      ? `${project.title}: ${project.subtitle.toLowerCase()}, by Prototype Media — multicam production studio for nightlife and events in Dubai.`
+      : "Work by Prototype Media.",
+    path: slug ? `/work/${slug}` : "/work",
+    noindex: !project,
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
