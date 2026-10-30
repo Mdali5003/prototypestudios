@@ -258,7 +258,7 @@ const TickerCard = ({ item, onOpen }: { item: MediaItem; onOpen: () => void }) =
         setInView(visible);
         if (visible) setShouldLoad(true);
       },
-      { rootMargin: "40px" }
+      { rootMargin: "400px" }
     );
     io.observe(el);
     return () => io.disconnect();
@@ -307,7 +307,6 @@ const TickerCard = ({ item, onOpen }: { item: MediaItem; onOpen: () => void }) =
           <img
             src={item.src}
             alt=""
-            loading="lazy"
             draggable={false}
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           />
