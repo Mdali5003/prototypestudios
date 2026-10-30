@@ -115,7 +115,7 @@ const HeroSection = () => {
 
       {/* Foreground: logo truly centered on the page, flanked by taglines */}
       <div
-        className={`absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-[362px] md:top-[483px] z-40 pointer-events-none transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] w-screen grid grid-cols-[1fr_auto_1fr] items-center gap-6 md:gap-16 px-4 md:px-6 ${
+        className={`absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-[362px] md:top-[483px] z-40 pointer-events-none transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] w-screen flex justify-center md:grid md:grid-cols-[1fr_auto_1fr] items-center gap-6 md:gap-16 px-4 md:px-6 ${
           visible && !playbackOpen ? "opacity-100 scale-100" : "opacity-0 scale-90"
         }`}
         style={{ perspective: "1000px" }}
