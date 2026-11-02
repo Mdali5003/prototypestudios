@@ -93,7 +93,7 @@ const LogoRow = ({ items: rowItems, reverse }: { items: Logo[]; reverse?: boolea
     const wrap = () => {
       const half = halfWidthRef.current;
       if (half <= 0) return;
-      if (offsetRef.current <= -half * 2) offsetRef.current += half;
+      if (offsetRef.current <= -half) offsetRef.current += half;
       if (offsetRef.current > 0) offsetRef.current -= half;
     };
 
@@ -140,7 +140,7 @@ const LogoRow = ({ items: rowItems, reverse }: { items: Logo[]; reverse?: boolea
     offsetRef.current = dragStartOffsetRef.current + dx;
     const half = halfWidthRef.current;
     if (half > 0) {
-      if (offsetRef.current <= -half * 2) offsetRef.current += half;
+      if (offsetRef.current <= -half) offsetRef.current += half;
       if (offsetRef.current > 0) offsetRef.current -= half;
     }
     track.style.transform = `translate3d(${offsetRef.current}px,0,0)`;
