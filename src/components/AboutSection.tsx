@@ -4,7 +4,7 @@ import aboutImg from "/portfolio/photos/moblack-about.jpg";
 const stats = [
   { value: "300+", label: "EVENTS" },
   { value: "4", label: "CONTINENTS" },
-  { value: "1", label: "STANDARD" },
+  { value: "<5HRS", label: "TURNAROUND" },
 ];
 
 const AboutSection = () => {
