@@ -25,6 +25,7 @@ const setRecording = [
   { src: "/hayden-james/hayden-james-1.mp4", link: `${BUNNY}/eb12708b-2dc6-404c-93df-87480859b086` },
   { src: "/ignez/ignez-1.mp4", link: `${BUNNY}/378bf557-aea4-4ba6-9bf2-966bd802f933` },
   { src: "/jonas-blue/jonas-blue-3.mp4", link: `${BUNNY}/7f42936a-3e9e-40cf-ae64-0dba08a5e6ea` },
+  { src: "/themba/themba-15.mp4", link: `${BUNNY}/43f3295f-c1e3-45a0-b44c-8fad3f586d75` },
 ].map((item) => ({ ...item, type: "video" as const }));
 
 const shortForm = [
@@ -49,6 +50,7 @@ const shortForm = [
   { src: "/portfolio/short-form-9.mp4" },
   { src: "/hayden-james/hayden-james-2.mp4", link: `${BUNNY}/e7995440-af10-41cd-a997-7e7bfdfb99a2` },
   { src: "/ignez/ignez-4.mp4", link: `${BUNNY}/790db578-12a6-4671-881f-a2987cd96c01` },
+  { src: "/anotr/anotr-13.mp4", link: `${BUNNY}/e9a97e73-f962-4c1b-85ed-0bc99ad56c70` },
 ].map((item) => ({ ...item, type: "video" as const }));
 
 const photos = [

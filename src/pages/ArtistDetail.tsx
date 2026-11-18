@@ -290,6 +290,30 @@ const artists: Record<string, Artist> = {
       { id: 6, src: "/indo-warehouse/indo-warehouse-11.mp4", title: "INDO WAREHOUSE 6", link: "https://player.mediadelivery.net/play/626251/96660b85-cba9-4f12-832d-1aa467069e4b" },
     ],
   },
+  "themba": {
+    name: "THEMBA",
+    subtitle: "",
+    clips: [
+      { id: 1, src: "/themba/themba-10.mp4", title: "THEMBA 1", link: "https://player.mediadelivery.net/play/626251/9dfa8832-9652-4d7a-9a07-fa29747d8d3d" },
+      { id: 2, src: "/themba/themba-11.mp4", title: "THEMBA 2", link: "https://player.mediadelivery.net/play/626251/5b75a496-7c7b-4b3b-a8bf-e2ba7ec95557" },
+      { id: 3, src: "/themba/themba-13.mp4", title: "THEMBA 3", link: "https://player.mediadelivery.net/play/626251/db11fca8-ad60-41be-8557-68a59d5c1299" },
+      { id: 4, src: "/themba/themba-14.mp4", title: "THEMBA 4", link: "https://player.mediadelivery.net/play/626251/91478b88-481d-4515-9544-6bbc3790d84e" },
+      { id: 5, src: "/themba/themba-15.mp4", title: "THEMBA 5", link: "https://player.mediadelivery.net/play/626251/43f3295f-c1e3-45a0-b44c-8fad3f586d75" },
+      { id: 6, src: "/themba/themba-16.mp4", title: "THEMBA 6", link: "https://player.mediadelivery.net/play/626251/4bb8a57e-ae85-476d-a172-f966addb97f6" },
+    ],
+  },
+  "anotr": {
+    name: "ANOTR",
+    subtitle: "",
+    clips: [
+      { id: 1, src: "/anotr/anotr-1.mp4", title: "ANOTR 1", link: "https://player.mediadelivery.net/play/626251/c12540eb-2183-464d-8ac8-751e288b7690" },
+      { id: 2, src: "/anotr/anotr-2.mp4", title: "ANOTR 2", link: "https://player.mediadelivery.net/play/626251/ef501d68-11b2-47f2-94a9-b202e0cd5a50" },
+      { id: 3, src: "/anotr/anotr-5.mp4", title: "ANOTR 3", link: "https://player.mediadelivery.net/play/626251/1f17a1ee-0e60-4e5f-97a8-9c753e50d422" },
+      { id: 4, src: "/anotr/anotr-7.mp4", title: "ANOTR 4", link: "https://player.mediadelivery.net/play/626251/6a44229d-7439-49b9-97f8-e57d485221ca" },
+      { id: 5, src: "/anotr/anotr-11.mp4", title: "ANOTR 5", link: "https://player.mediadelivery.net/play/626251/d68d6a46-5cdb-4b30-b747-a58f05f56f4e" },
+      { id: 6, src: "/anotr/anotr-13.mp4", title: "ANOTR 6", link: "https://player.mediadelivery.net/play/626251/e9a97e73-f962-4c1b-85ed-0bc99ad56c70" },
+    ],
+  },
 };
 
 const ArtistDetail = () => {

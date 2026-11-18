@@ -30,6 +30,8 @@ const artists: Card[] = [
   { slug: "ignez", name: "IGNEZ", subtitle: "", photo: "/artists/ignez.jpg" },
   { slug: "jonas-blue", name: "JONAS BLUE", subtitle: "BOHEMIA BY FIVE DUBAI", photo: "/artists/jonas-blue.jpg" },
   { slug: "indo-warehouse", name: "INDO WAREHOUSE", subtitle: "", photo: "/artists/indo-warehouse.jpg" },
+  { slug: "themba", name: "THEMBA", subtitle: "", photo: "/artists/themba.jpg" },
+  { slug: "anotr", name: "ANOTR", subtitle: "", photo: "/artists/anotr.jpg" },
 ];
 
 const venues: Card[] = [
