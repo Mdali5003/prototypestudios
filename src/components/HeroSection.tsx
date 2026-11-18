@@ -24,6 +24,7 @@ const setRecording = [
   { src: "/portfolio/sr-klang.mp4", link: `${BUNNY}/009eb744-ab92-4878-b762-26df971ea8d2` },
   { src: "/hayden-james/hayden-james-1.mp4", link: `${BUNNY}/eb12708b-2dc6-404c-93df-87480859b086` },
   { src: "/ignez/ignez-1.mp4", link: `${BUNNY}/378bf557-aea4-4ba6-9bf2-966bd802f933` },
+  { src: "/jonas-blue/jonas-blue-3.mp4", link: `${BUNNY}/7f42936a-3e9e-40cf-ae64-0dba08a5e6ea` },
 ].map((item) => ({ ...item, type: "video" as const }));
 
 const shortForm = [
