@@ -19,8 +19,11 @@ const artists: Card[] = [
   { slug: "i-hate-models", name: "I HATE MODELS", subtitle: "SOHO GARDEN HIVE", photo: "/artists/i-hate-models.jpg" },
   { slug: "klangkuenstler", name: "KLANGKUENSTLER", subtitle: "SOHO GARDEN HIVE", photo: "/artists/klangkuenstler.jpg" },
   { slug: "aaron-sevilla", name: "AARON SEVILLA", subtitle: "SAVAYA BALI", photo: "/artists/aaron-sevilla.jpg" },
+  { slug: "anotr", name: "ANOTR", subtitle: "", photo: "/artists/anotr.jpg" },
+  { slug: "jonas-blue", name: "JONAS BLUE", subtitle: "BOHEMIA BY FIVE DUBAI", photo: "/artists/jonas-blue.jpg" },
   { slug: "francis-mercier", name: "FRANCIS MERCIER", subtitle: "SAVAYA BALI", photo: "/artists/francis-mercier.jpg" },
   { slug: "itschyll", name: "ITSCHYLL", subtitle: "&FRIENDS FESTIVAL, MANILA", photo: "/artists/itschyll.jpg" },
+  { slug: "themba", name: "THEMBA", subtitle: "", photo: "/artists/themba.jpg" },
   { slug: "moblack", name: "MOBLACK", subtitle: "USHUAIA DUBAI HARBOUR", photo: "/artists/moblack.jpg" },
   { slug: "honeyluv", name: "HONEYLUV", subtitle: "MINISTRY OF SOUND, DUBAI", photo: "/artists/honeyluv.jpg" },
   { slug: "armnhmr", name: "ARMNHMR", subtitle: "&FRIENDS FESTIVAL, MANILA", photo: "/artists/armnhmr.jpg" },
@@ -28,10 +31,7 @@ const artists: Card[] = [
   { slug: "vidojean", name: "VIDOJEAN", subtitle: "INDIA TOUR", photo: "/artists/vidojean.jpg" },
   { slug: "hayden-james", name: "HAYDEN JAMES", subtitle: "SAVAYA BALI", photo: "/artists/hayden-james.jpg" },
   { slug: "ignez", name: "IGNEZ", subtitle: "", photo: "/artists/ignez.jpg" },
-  { slug: "jonas-blue", name: "JONAS BLUE", subtitle: "BOHEMIA BY FIVE DUBAI", photo: "/artists/jonas-blue.jpg" },
   { slug: "indo-warehouse", name: "INDO WAREHOUSE", subtitle: "", photo: "/artists/indo-warehouse.jpg" },
-  { slug: "themba", name: "THEMBA", subtitle: "", photo: "/artists/themba.jpg" },
-  { slug: "anotr", name: "ANOTR", subtitle: "", photo: "/artists/anotr.jpg" },
 ];
 
 const venues: Card[] = [
