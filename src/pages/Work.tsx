@@ -29,6 +29,7 @@ const artists: Card[] = [
   { slug: "hayden-james", name: "HAYDEN JAMES", subtitle: "SAVAYA BALI", photo: "/artists/hayden-james.jpg" },
   { slug: "ignez", name: "IGNEZ", subtitle: "", photo: "/artists/ignez.jpg" },
   { slug: "jonas-blue", name: "JONAS BLUE", subtitle: "BOHEMIA BY FIVE DUBAI", photo: "/artists/jonas-blue.jpg" },
+  { slug: "indo-warehouse", name: "INDO WAREHOUSE", subtitle: "", photo: "/artists/indo-warehouse.jpg" },
 ];
 
 const venues: Card[] = [

@@ -278,6 +278,18 @@ const artists: Record<string, Artist> = {
       { id: 6, src: "/jonas-blue/jonas-blue-22.mp4", title: "JONAS BLUE 6", link: "https://player.mediadelivery.net/play/626251/2b2f94e4-dc7d-4606-9e34-88118e0fe33d" },
     ],
   },
+  "indo-warehouse": {
+    name: "INDO WAREHOUSE",
+    subtitle: "",
+    clips: [
+      { id: 1, src: "/indo-warehouse/indo-warehouse-6.mp4", title: "INDO WAREHOUSE 1", link: "https://player.mediadelivery.net/play/626251/06666d10-f0ae-402c-9249-b8ef3d5532d0" },
+      { id: 2, src: "/indo-warehouse/indo-warehouse-7.mp4", title: "INDO WAREHOUSE 2", link: "https://player.mediadelivery.net/play/626251/2463000e-feff-4083-87a5-8e701982bd7b" },
+      { id: 3, src: "/indo-warehouse/indo-warehouse-8.mp4", title: "INDO WAREHOUSE 3", link: "https://player.mediadelivery.net/play/626251/f00e3ef5-6c7e-4f5c-b276-2b3aa2a5de15" },
+      { id: 4, src: "/indo-warehouse/indo-warehouse-9.mp4", title: "INDO WAREHOUSE 4", link: "https://player.mediadelivery.net/play/626251/180c2583-2c11-4dc7-a9cf-2385e0dca3ad" },
+      { id: 5, src: "/indo-warehouse/indo-warehouse-10.mp4", title: "INDO WAREHOUSE 5", link: "https://player.mediadelivery.net/play/626251/4b5ee57d-0112-48b3-8374-1aff673ead22" },
+      { id: 6, src: "/indo-warehouse/indo-warehouse-11.mp4", title: "INDO WAREHOUSE 6", link: "https://player.mediadelivery.net/play/626251/96660b85-cba9-4f12-832d-1aa467069e4b" },
+    ],
+  },
 };
 
 const ArtistDetail = () => {

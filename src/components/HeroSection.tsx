@@ -45,6 +45,7 @@ const shortForm = [
   { src: "/portfolio/short-form-8.mp4" },
   { src: "/vidojean/vidojean-5.mp4", link: `${BUNNY}/c769c312-509f-4ebe-8562-7bdd3e1c5bfd` },
   { src: "/jonas-blue/jonas-blue-2.mp4", link: `${BUNNY}/0c923253-f3bf-4a68-a311-e1bea49b2b69` },
+  { src: "/indo-warehouse/indo-warehouse-7.mp4", link: `${BUNNY}/2463000e-feff-4083-87a5-8e701982bd7b` },
   { src: "/portfolio/short-form-9.mp4" },
   { src: "/hayden-james/hayden-james-2.mp4", link: `${BUNNY}/e7995440-af10-41cd-a997-7e7bfdfb99a2` },
   { src: "/ignez/ignez-4.mp4", link: `${BUNNY}/790db578-12a6-4671-881f-a2987cd96c01` },
