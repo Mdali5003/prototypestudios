@@ -266,6 +266,18 @@ const artists: Record<string, Artist> = {
       { id: 8, src: "/carl-cox/carl-cox-15.mp4", title: "CARL COX 8", link: "https://player.mediadelivery.net/play/626251/075bdc74-3bd9-416d-8055-4123579c4944" },
     ],
   },
+  "jonas-blue": {
+    name: "JONAS BLUE",
+    subtitle: "BOHEMIA BY FIVE DUBAI",
+    clips: [
+      { id: 1, src: "/jonas-blue/jonas-blue-1.mp4", title: "JONAS BLUE 1", link: "https://player.mediadelivery.net/play/626251/59ef8e25-1104-44db-a6d7-f9c51b798937" },
+      { id: 2, src: "/jonas-blue/jonas-blue-2.mp4", title: "JONAS BLUE 2", link: "https://player.mediadelivery.net/play/626251/0c923253-f3bf-4a68-a311-e1bea49b2b69" },
+      { id: 3, src: "/jonas-blue/jonas-blue-3.mp4", title: "JONAS BLUE 3", link: "https://player.mediadelivery.net/play/626251/7f42936a-3e9e-40cf-ae64-0dba08a5e6ea" },
+      { id: 4, src: "/jonas-blue/jonas-blue-13.mp4", title: "JONAS BLUE 4", link: "https://player.mediadelivery.net/play/626251/d668122c-9039-43fe-94de-1f672f2e109c" },
+      { id: 5, src: "/jonas-blue/jonas-blue-14.mp4", title: "JONAS BLUE 5", link: "https://player.mediadelivery.net/play/626251/d101a0ae-1e0f-471f-a347-1d8cc3965753" },
+      { id: 6, src: "/jonas-blue/jonas-blue-22.mp4", title: "JONAS BLUE 6", link: "https://player.mediadelivery.net/play/626251/2b2f94e4-dc7d-4606-9e34-88118e0fe33d" },
+    ],
+  },
 };
 
 const ArtistDetail = () => {
