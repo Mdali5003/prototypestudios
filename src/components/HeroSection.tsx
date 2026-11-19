@@ -27,6 +27,7 @@ const setRecording = [
   { src: "/jonas-blue/jonas-blue-3.mp4", link: `${BUNNY}/7f42936a-3e9e-40cf-ae64-0dba08a5e6ea` },
   { src: "/themba/themba-15.mp4", link: `${BUNNY}/43f3295f-c1e3-45a0-b44c-8fad3f586d75` },
   { src: "/themba/themba-11.mp4", link: `${BUNNY}/5b75a496-7c7b-4b3b-a8bf-e2ba7ec95557` },
+  { src: "/adamport/adamport-2.mp4", link: `${BUNNY}/34750023-7f4f-478e-9ae7-7c266d3f64d8` },
 ].map((item) => ({ ...item, type: "video" as const }));
 
 const shortForm = [
@@ -54,6 +55,7 @@ const shortForm = [
   { src: "/ignez/ignez-4.mp4", link: `${BUNNY}/790db578-12a6-4671-881f-a2987cd96c01` },
   { src: "/anotr/anotr-13.mp4", link: `${BUNNY}/e9a97e73-f962-4c1b-85ed-0bc99ad56c70` },
   { src: "/anotr/anotr-1.mp4", link: `${BUNNY}/c12540eb-2183-464d-8ac8-751e288b7690` },
+  { src: "/adamport/adamport-16.mp4", link: `${BUNNY}/bc2575fc-f811-4b08-8d7b-6eca8bd5e484` },
 ].map((item) => ({ ...item, type: "video" as const }));
 
 const photos = [

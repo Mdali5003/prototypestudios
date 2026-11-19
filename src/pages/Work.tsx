@@ -19,6 +19,7 @@ const artists: Card[] = [
   { slug: "i-hate-models", name: "I HATE MODELS", subtitle: "SOHO GARDEN HIVE", photo: "/artists/i-hate-models.jpg" },
   { slug: "klangkuenstler", name: "KLANGKUENSTLER", subtitle: "SOHO GARDEN HIVE", photo: "/artists/klangkuenstler.jpg" },
   { slug: "aaron-sevilla", name: "AARON SEVILLA", subtitle: "SAVAYA BALI", photo: "/artists/aaron-sevilla.jpg" },
+  { slug: "adamport", name: "ADAM PORT", subtitle: "", photo: "/artists/adamport.jpg" },
   { slug: "anotr", name: "ANOTR", subtitle: "", photo: "/artists/anotr.jpg" },
   { slug: "jonas-blue", name: "JONAS BLUE", subtitle: "BOHEMIA BY FIVE DUBAI", photo: "/artists/jonas-blue.jpg" },
   { slug: "francis-mercier", name: "FRANCIS MERCIER", subtitle: "SAVAYA BALI", photo: "/artists/francis-mercier.jpg" },

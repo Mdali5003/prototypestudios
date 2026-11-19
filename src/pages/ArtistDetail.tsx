@@ -314,6 +314,18 @@ const artists: Record<string, Artist> = {
       { id: 6, src: "/anotr/anotr-13.mp4", title: "ANOTR 6", link: "https://player.mediadelivery.net/play/626251/e9a97e73-f962-4c1b-85ed-0bc99ad56c70" },
     ],
   },
+  "adamport": {
+    name: "ADAM PORT",
+    subtitle: "",
+    clips: [
+      { id: 1, src: "/adamport/adamport-2.mp4", title: "ADAM PORT 1", link: "https://player.mediadelivery.net/play/626251/34750023-7f4f-478e-9ae7-7c266d3f64d8" },
+      { id: 2, src: "/adamport/adamport-5.mp4", title: "ADAM PORT 2", link: "https://player.mediadelivery.net/play/626251/2d84c458-5080-41c1-92ce-34391b651c64" },
+      { id: 3, src: "/adamport/adamport-7.mp4", title: "ADAM PORT 3", link: "https://player.mediadelivery.net/play/626251/b6cfee77-fa96-432c-b55d-f4687ceb74c1" },
+      { id: 4, src: "/adamport/adamport-8.mp4", title: "ADAM PORT 4", link: "https://player.mediadelivery.net/play/626251/54027b71-7847-4fd6-8158-da0ce6ba2002" },
+      { id: 5, src: "/adamport/adamport-16.mp4", title: "ADAM PORT 5", link: "https://player.mediadelivery.net/play/626251/bc2575fc-f811-4b08-8d7b-6eca8bd5e484" },
+      { id: 6, src: "/adamport/adamport-17.mp4", title: "ADAM PORT 6", link: "https://player.mediadelivery.net/play/626251/1edf040f-9e61-40af-b17f-ba0787e986ed" },
+    ],
+  },
 };
 
 const ArtistDetail = () => {
